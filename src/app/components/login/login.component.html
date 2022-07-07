@@ -1,0 +1,115 @@
+
+
+<div class="topnav">
+    <div class="logoimage">
+        <img src="../../../assets/images/logo.png" alt="descriptive text">
+    </div>
+    <div class="matchtext">MATCH</div>
+    <div class="about" data-toggle="modal" data-target="#exampleModal" (click)="openPopup()">About</div>
+    <div class="questionmark"><i></i></div>
+</div>
+<div class="body">
+    <div class="leftdiv">
+        <img src="../../../assets/images/background_image.png" height="100%" class=backgroundimage alt="descriptive text"> 
+        <div class = Quote>
+            <div class="welcome">Welcome to</div><br><br>
+            <div><span style="color:black">M</span>ultiData/Service <span style="color:black">A</span>ggregation Tool</div> <br><br>
+            <div>and <span style="color:black">C</span>orrection for <span style="color:black">H</span>OTO Activities</div>
+
+        </div>        
+    </div>
+
+    <div class="container">
+      <div id="rightdiv">
+      
+        <form action="" method="post">
+          <img src="../../../assets/images/image.png" class=sideimage alt="descriptive text">
+            <div><label for="ftid"  class="FTID">FTID </label> </div>
+            <div><input type="text"  name="ftid" id="ftid" class="valueftid" value=""/></div> 
+            <div><label for="password" class="Password">Password </label></div>
+            <div><input type="password" name="password" id="password" class="valuepassword" value=""/></div>
+            <span *ngIf="msg" style="position:relative;top:170px;left:135px ;font-weight: bold;color: #FF7900;"> * {{msg}} * </span>
+            <div><input type="button"   class="loginbtn"  (click)="login($event)" value="Login"/></div>
+            
+           
+               <!-- <div style="position:relative;left:100%"><hr style="width: 15%;"></div>--> 
+                <div ><label for="or" class="or">OR </label></div>
+                <!--<div ><hr style="width: 12%; "> </div>-->
+        
+            <!--<div class="forgetpassword"><i>Forgot Password?</i></div>-->
+            <div class="signup" align="center">Don't have account? <span style="color:blue" onclick="document.getElementById('id01').style.display='block'"> Signup?</span></div>
+        </form>                                                                            
+    </div>
+    </div>
+    
+  
+</div>
+
+<div class="modal"  data-backdrop="true" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display':displayStyle}"  style="background-color: rgba(0, 0, 0, 0.5);z-index: 1;">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title"  id="exampleModalLabel">MATCH Portal</h4>
+        </div>
+        <div class="modal-body">
+          <p>This tool ensures the sync between commercial and technical inventory and Data Integrity throughout all the downstream tools.
+
+            Ensure roles and responsibilities are clearly defined.
+            
+            Support better collaboration between Service Transition and Service Operations towards the common objective of Data Integrity
+            
+            Error correction at source so that all the downstream tools are in a consequent sync.
+            
+            Increase efficiency of operational teams by providing them updated information during real time outage scenario.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" 
+                  (click)="closePopup()">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<!-- The Modal (contains the Sign Up form) -->
+<div id="id01" class="signup-modal">
+    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">X</span>
+    <form class="signup-content" >
+      <div class="signup-container" >
+        <h1>Sign Up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <hr>
+        <label for="email"><b>Email</b></label>
+        <input type="text" id="email"  class="signup-input" placeholder="Enter Email" name="email" required>
+  
+        <label for="email"><b>Name</b></label>
+        <input type="text" id="username"  class="signup-input"placeholder="Enter Name" name="Name" required>
+  
+        <label for="psw"><b>FTID</b></label>
+        <input type="text"  id="ftid1" class="signup-input" placeholder="Enter FTID" name="ftid" required>
+  
+        <label for="psw-repeat"><b>Role</b></label>
+        <Select  id="access_role" class="signup-input">     
+          <option>User</option>
+          <option>Admin</option>
+        
+        </Select>
+       
+  
+  
+        <label for="psw-repeat"><b>Password</b></label>
+        <input type="password" id="password1"  class="signup-input" placeholder="Password" name="psw-repeat" required>
+  
+        
+       
+        <div class="clearfix">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <button type="button" class="signupbtn" onclick="document.getElementById('id01').style.display='block'"  >Sign Up</button>
+        </div>
+      </div>
+    </form>
+</div>
+  
+

@@ -1,0 +1,978 @@
+<app-header></app-header>
+
+<div class="container" style="padding: 10px;">
+
+        <div class="row">
+          <div class="form-group col-md-4">
+            <label for="device_name"  class="col-sm-4 col-form-label">Device Name</label>
+            <input type="text"  class="form-control" id="device_name"  placeholder="Enter Device Name">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="cust_name"  class="col-sm-6 col-form-label">Customer Name/ICO1</label>
+            <input type="text" class="form-control" id="cust_name" placeholder="Enter Customer Name/Code">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="gold_number"  class="col-sm-6 col-form-label">Gold Reference Number</label>
+            <input type="text" class="form-control" id="gold_number" placeholder="Enter Gold Reference Number">
+          </div>
+        </div>
+      
+        <div class="row">
+         
+          <div class="form-group col-md-4">
+            <label  class="col-sm-6 col-form-label" >RFS Date From</label>
+            <input type="date" class="form-control " id="rfs_date2">         
+          </div>
+          <div class="form-group col-md-4">
+            <label for="inputCity"  class="col-sm-6 col-form-label">RFS Date To</label>
+            <input type="date" class="form-control" id="rfs_date1">
+          </div>
+        
+
+
+            <div  class="col-sm-4 col-form-label"style="margin-top:30px;">
+                <label ></label>
+                <button (click)="search($event,mySelect.value);search($event,mySelect1.value);" class="btn btn-primary lg" style="background:#FF7900">Search</button>
+            </div>
+           
+        </div>    
+
+</div>
+
+<div class="container" style="margin-top:30px;">
+
+    <div class="wrapper">
+        
+        <!-- Tabs navs -->
+        <div class="tab">
+            <button class="tablinks" (click)="search($event,mySelect.value)" onclick="clickHandle(event, 'Sesame')">SESAM</button>
+            <button class="tablinks" (click)="search($event,mySelect1.value)" onclick="clickHandle(event, 'Salto')">SALTO</button>
+     
+        </div>
+        
+          <div id="Sesame" class="tabcontent">        
+           
+              <label style="position:relative ;left:650px; display: inline-block;font-family:helvetica;" >        
+                <div class="row" style="margin-top:10px;">
+                  <div class="form-group col-md-4">
+                    <select #mySelect class="form-select" aria-label="Disabled select example" (change)="search($event,mySelect.value)">
+                      <option value="sesame"><li><button class="dropdown-item" type="button">Sesame</button></li> </option>
+                      <option value="sesame_Gini"> <li><button class="dropdown-item" type="button">Gini</button></li> </option>
+                      <option value="sesame_gold"> <li><button class="dropdown-item" type="button">Gold</button></li></option>
+                      <option value="sesame_flip">   <li><button class="dropdown-item" type="button">Flip</button></li></option>
+                      <option value="sesame_oceane"> <button class="dropdown-item" type="button">Oceane</button></option>
+                      <option value="sesame_orche"> <li><button class="dropdown-item" type="button">Orchestre</button></li></option>
+                      <option value="sesame_fileade_provisioning"> <li><button class="dropdown-item" value="" type="button">Fileade Provisioning</button></li></option>
+                      <option value="sesame_fileade_meshing"> <li><button class="dropdown-item" type="button">Fileade Meshing</button></li></option>
+                      <option value="sesame_fileade_ordering"> <li><button class="dropdown-item" type="button">Fileade Ordering</button></li></option>
+                      <option value="sesame_SEENCSA"> <li><button class="dropdown-item" type="button">SEENCSA</button></li></option>             
+                      
+        
+                    </select>
+                  </div>
+                  <div class="form-group col-md-5">
+                  <label style="margin-top:5px;" >  Show <select name="pageSize" (change)="selectPageSize($event)" style="padding-top: .1875rem;
+                    padding-bottom: .1875rem;">
+                      <option *ngFor = "let size of pageSizeOptions" [value]="size">{{size}}</option>
+                    </select> entries
+                  </label> 
+                  </div>
+      
+                  <div class="form-group col-md-3" >
+                    <button  (click)="exportexcel(sesame_data)" Style="cursor: pointer;color:white;background-color:black;position:relative;width:40px;height: 35px;">
+                        <i class="material-icons" style="vertical-align: middle;">cloud_download</i>
+                    </button> 
+                  </div>
+                </div>
+              </label>
+              <div class="table-responsive" >           
+                  <table id="sesame_app" *ngIf="myselect==='sesame'"  class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead  >
+                      <th>Device Name</th>    <th>SOID</th>     <th>Customer Code</th>         <th>Customer Name</th>
+                      <th>Order Reference</th>  <th>Original Order Reference</th>   
+                      <th>Type of Order</th>   
+                      <th>Order Status</th>
+                      <th>Order Type</th>
+                      <th>Service Type</th>
+                      <th>Ethernet Carrier Bandwidth</th>
+                      <th>Local Company Name</th>
+                      <th>Street Name</th>
+                      <th>Building Name</th>
+                      <th>Location Name</th>
+                      <th>Postal Code</th>
+                      <th>Contact1</th>
+                      <th>Email1</th>
+                      <th>Phone1</th>
+                      <th>Mobile1</th>
+                      <th>Fax1</th>
+                      <th>Contact2</th>
+                      <th>Email2</th>
+                      <th>Phone2</th>
+                      <th>Mobile2</th>
+                      <th>Fax2</th>
+                      <th>CIWO-Name</th>
+                      <th>CIWO-ID</th>
+                      <th>Selected Carrier</th>
+                      <th>Circuit Reference Type</th>
+                      <th>Circuit Reference</th>
+                      <th>SIO Order Status</th>
+                      <th>Commercial Name</th>
+                      <th>Gold_Creation_Date</th>
+                      <th>Order_Creation_Date</th>
+                      <th>Received_In_Sesame</th>
+                      <th>Location_Validation_Date</th>
+                      <th>RFS_Date</th>
+                      <th>Customer_Request_Modification_Date</th>
+                      <th>Cut_Date</th>
+                      <th>Is_Partner</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                        <td *ngIf="s.routerName!=null" >{{s.routerName}}</td><td style="color:#FF7900" *ngIf="s.routerName==null" >Not Applicable</td> 
+                        <td *ngIf="s.sioid!=null">{{s.sioid}} </td>	 <td style="color:#FF7900" *ngIf="s.sioid==null" >Not Applicable</td> 
+                          <td *ngIf="s.customerCode!=null"> {{s.customerCode}} </td>	 <td style="color:#FF7900" *ngIf="s.customerCode==null" >Not Applicable</td> 
+                          <td *ngIf="s.customerName!=null">{{s.customerName}} </td>   <td style="color:#FF7900" *ngIf="s.customerName==null" >Not Applicable</td> 
+                        <td *ngIf="s.orderReference!=null">{{s.orderReference}} </td>	   <td style="color:#FF7900" *ngIf="s.orderReference==null" >Not Applicable</td> 
+                        <td *ngIf="s.originalOrderReference!=null">{{s.originalOrderReference}} </td>		  <td style="color:#FF7900" *ngIf="s.originalOrderReference==null" >Not Applicable</td> 
+                        <td *ngIf="s.typeOfOrder!=null"> {{s.typeOfOrder}}</td>	<td style="color:#FF7900" *ngIf="s.typeOfOrder==null" >Not Applicable</td>
+                        <td *ngIf="s.orderStatus!=null">{{s.orderStatus }} </td> <td style="color:#FF7900" *ngIf="s.orderStatus==null" >Not Applicable</td>	
+                        <td *ngIf="s.orderType!=null"> {{s.orderType}}</td>	<td style="color:#FF7900" *ngIf="s.orderType==null" >Not Applicable</td>	
+                        <td *ngIf="s.serviceType!=null">{{s.serviceType}} </td>	 <td style="color:#FF7900" *ngIf="s.serviceType==null" >Not Applicable</td>	
+                        <td *ngIf="s.ethernetCarrierBandwidth!=null"> {{s.ethernetCarrierBandwidth}} </td>	  <td style="color:#FF7900" *ngIf="s.ethernetCarrierBandwidth==null"> Not Applicable </td>	
+                        <td *ngIf="s.localCompanyName!=null"> {{s.localCompanyName}} </td> <td style="color:#FF7900" *ngIf="s.localCompanyName==null" >Not Applicable</td>	
+                        <td *ngIf="s.streetName!=null"> {{s.streetName}} </td> <td style="color:#FF7900" *ngIf="s.streetName==null" >Not Applicable</td>	
+                        <td *ngIf="s.buildingName!=null"> {{s.buildingName}} </td>	   <td style="color:#FF7900" *ngIf="s.buildingName==null"> Not Applicable  </td>	 
+                        <td  *ngIf="s.locationName!=null"> {{s.locationName}} </td>	<td style="color:#FF7900" *ngIf="s.locationName==null"> Not Applicable  </td>	 
+                        <td> {{s.postalCode}} </td>
+                        <td> {{s.contact1 }} </td>	
+                        <td> {{s.email1}} </td>	 
+                        <td> {{s.phone1}} </td>	
+                        <td> {{s.mobile1}} </td>
+                        <td *ngIf="s.fax1!=null"> {{s.fax1 }} </td> <td style="color:#FF7900" *ngIf="s.fax1==null"> Not Applicable  </td>	 
+                        <td *ngIf="s.contact2!=null"> {{s.contact2}} </td> <td style="color:#FF7900" *ngIf="s.contact2==null"> Not Applicable  </td>	 
+                        <td *ngIf="s.email2!=null"> {{s.email2 }} </td>	<td style="color:#FF7900" *ngIf="s.email2==null"> Not Applicable  </td>	 
+                        <td *ngIf="s.phone2!=null"> {{s.phone2}} </td>	 <td style="color:#FF7900" *ngIf="s.phone2==null"> Not Applicable  </td>	 
+                        <td *ngIf="s.mobile2!=null"> {{s.mobile2}} </td>	<td style="color:#FF7900" *ngIf="s.mobile2==null"> Not Applicable  </td>	 
+                        <td *ngIf="s.fax2!=null"> {{s.fax2}} </td>	<td style="color:#FF7900" *ngIf="s.fax2==null"> Not Applicable  </td>	 
+                        <td> {{s.ciwoName}} </td>
+                        <td> {{s.ciwoId }} </td>            
+                        <td> {{s.selectedCarrier}} </td>	
+                        <td> {{s.circuitReferenceType}} </td>
+                        <td> {{s.circuitReference }} </td>
+                        <td> {{s.sioOrderStatus}} </td>
+                        <td> {{s.commercialName }} </td>	
+                        <td> {{s.goldCreationDate}} </td>	 
+                        <td> {{s.orderCreationDate}} </td>	
+                        <td> {{s.receivedInSesam}} </td>
+                        <td> {{s.locationValidationDate }} </td> 	            
+                        <td *ngIf="s.rfsDate!=null"> {{s.rfsDate }} </td>	 <td style="color:#FF7900" *ngIf="s.rfsDate==null" >Not Applicable</td>       
+                        <td> {{s.customerRequestedModificationDate}} </td>	
+                        <td> {{s.cutDate}} </td>
+                        <td> {{s.isPartner }} </td> 			
+            
+                    </tr>
+                    </tbody>
+                  </table>                  
+                  <table id="sesame_fileade_provisioning" *ngIf="myselect==='sesame_fileade_provisioning'"  class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead >
+                      <th>Device Name</th>    
+                      <th>Customer Code</th>
+                      <th>Customer Name</th>
+                      <th>RFS Date</th>
+                      <th>Gold Reference Number</th>
+                      <th>Router Status</th>
+                      <th>Router Interface Local</th>
+                      <th>Carrier Ethernet Bandwidth Access Speed</th>
+                      <th>IP Bandwidth</th>
+                      <th>COS RTBW</th>
+                      <th>COS RTVIBW</th>
+                      <th>COS Data CIR</th>
+                      <th>D1</th>
+                      <th>D2</th>
+                      <th>D3</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                        <td *ngIf="s.Router_name!=null" >{{s.Router_name}}</td>         <td style="color:#FF7900" *ngIf="s.Router_name==null" >Not Applicable</td> 
+                        <td *ngIf="s.customer_code!=null"> {{s.customer_code}} </td>	 <td style="color:#FF7900" *ngIf="s.customer_code==null" >Not Applicable</td> 
+                        <td *ngIf="s.customer_name!=null">{{s.customer_name}} </td>   <td style="color:#FF7900" *ngIf="s.customer_name==null" >Not Applicable</td> 
+                        <td *ngIf="s.rfs_date!=null"> {{s.rfs_date }} </td>	 <td style="color:#FF7900" *ngIf="s.rfs_date==null" >Not Applicable</td>   
+                        <td *ngIf="s.gold_reference_number!=null">{{s.gold_reference_number}} </td>	   <td style="color:#FF7900" *ngIf="s.gold_reference_number==null" >Not Applicable</td> 
+                        <td *ngIf="s.Router_Status!=null">{{s.Router_Status}} </td>		  <td style="color:#FF7900" *ngIf="s.Router_Status==null" >Not Applicable</td> 
+                        <td *ngIf="s.Router_Interface_Local!=null"> {{s.Router_Interface_Local}}</td>	<td style="color:#FF7900" *ngIf="s.Router_Interface_Local==null" >Not Applicable</td>
+                        <td *ngIf="s.Carrier_Ethernet_BW_Access_Speed!=null">{{s.Carrier_Ethernet_BW_Access_Speed }} </td> <td style="color:#FF7900" *ngIf="s.Carrier_Ethernet_BW_Access_Speed==null" >Not Applicable</td>	
+                        <td *ngIf="s.IP_Bandwidth!=null"> {{s.IP}}</td>	<td style="color:#FF7900" *ngIf="s.IP==null" >Not Applicable</td>	
+                        <td *ngIf="s.COS_RTBW!=null">{{s.COS_RTBW}} </td>	 <td style="color:#FF7900" *ngIf="s.COS_RTBW==null" >Not Applicable</td>	
+                        <td *ngIf="s.COS_RTVIBW!=null"> {{s.COS_RTVIBW}} </td>	  <td style="color:#FF7900" *ngIf="s.COS_RTVIBW==null"> Not Applicable </td>	
+                        <td *ngIf="s.COS_Data_CIR!=null"> {{s.COS_Data_CIR}} </td> <td style="color:#FF7900" *ngIf="s.COS_Data_CIR==null" >Not Applicable</td>	
+                        <td *ngIf="s.D1!=null"> {{s.D1}} </td> <td style="color:#FF7900" *ngIf="s.D1==null" >Not Applicable</td>	
+                        <td *ngIf="s.D2!=null"> {{s.D2}} </td>	   <td style="color:#FF7900" *ngIf="s.D2==null"> Not Applicable  </td>	 
+                        <td  *ngIf="s.D3!=null"> {{s.D3}} </td>	<td style="color:#FF7900" *ngIf="s.D3==null"> Not Applicable  </td>	 
+                      
+                    </tr>
+                    </tbody>
+                  </table>
+                  <table id="sesame_fileade_ordering" *ngIf="myselect==='sesame_fileade_ordering'"  class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead >
+                      <th>Device Name</th>    
+                      <th>Customer Code</th>
+                      <th>Customer Name</th>
+                      <th>RFS Date</th>
+                      <th>Gold Reference Number</th>
+                      <th>Load Balancing</th>
+                      <th>IP Reporting</th>
+                      <th>Cascaded Router</th>
+                      <th>Cascading Router</th>
+                      <th>Cascaded Cascading Router</th>
+                      <th>Cascaded Second One</th>
+                      <th>Cascaded CVR</th>
+                      <th>load_balancing_dual_ce_to_dual_pes</th>
+                      <th>Load balancing primary</th>
+                      <th>Load Balancing Secondary</th>
+                      <th>Load Balancing associated router name</th>
+                      <th> load_balancing_soo_db_value</th>
+                      <th> path_availability_reporting </th> <th>path_rerformance_reporting</th> <th> router_performance_reporting</th>
+                      <th> path_availability_sla</th> <th>path_performance_sla</th> <th>real_time_path_performance_monitoring,</th> 
+                      <th> real_time_router_monitoring,</th>  <th>site_availability_reporting, </th> <th>site_availability_sla, </th>  <th>ip_bandwidth_utilization_reporting</th>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+            
+                      <td *ngIf="s.Router_Name!=null" >{{s.Router_Name}}</td><td style="color:#FF7900" *ngIf="s.Router_Name==null" >Not Applicable</td> 
+                      <td *ngIf="s.Customer_Code!=null"> {{s.Customer_Code}} </td>	 <td style="color:#FF7900" *ngIf="s.Customer_Code==null" >Not Applicable</td> 
+                      <td *ngIf="s.Company_Name!=null">{{s.Company_Name}} </td>   <td style="color:#FF7900" *ngIf="s.Company_Name==null" >Not Applicable</td> 
+                      <td *ngIf="s.rfs_date!=null"> {{s.rfs_date }} </td>	 <td style="color:#FF7900" *ngIf="s.rfs_date==null" >Not Applicable</td>   
+                      <td *ngIf="s.gold_reference_number!=null">  {{s.gold_reference_number }} </td> <td style="color:#FF7900" *ngIf="s.gold_reference_number==null" >Not Applicable</td>   
+                      <td *ngIf="s.Load_Balancing!=null">  {{s.Load_Balancing }} </td> <td style="color:#FF7900" *ngIf="s.Load_Balancing==null" >Not Applicable</td>   
+                  
+                      <td *ngIf="s.IP_Reporting!=null">  {{s.IP_Reporting }} </td> <td style="color:#FF7900" *ngIf="s.IP_Reporting==null" >Not Applicable</td>   
+                      <td *ngIf="s.Cascaded_Router!=null">  {{s.Cascaded_Router }} </td> <td style="color:#FF7900" *ngIf="s.Cascaded_Router==null" >Not Applicable</td>   
+                      <td *ngIf="s.Cascading_Router!=null">  {{s.Cascading_Router }} </td> <td style="color:#FF7900" *ngIf="s.Cascading_Router==null" >Not Applicable</td>   
+                      <td *ngIf="s.Cascaded_Cascading_Router!=null">  {{s.Cascaded_Cascading_Router }} </td> <td style="color:#FF7900" *ngIf="s.Cascaded_Cascading_Router==null" >Not Applicable</td>   
+                      <td *ngIf="s.CasCaded_Second_One!=null">  {{s.CasCaded_Second_One }} </td> <td style="color:#FF7900" *ngIf="s.CasCaded_Second_One==null" >Not Applicable</td>   
+                      <td *ngIf="s.Cascaded_CVR!=null">  {{s.Cascaded_CVR }} </td> <td style="color:#FF7900" *ngIf="s.Cascaded_CVR==null" >Not Applicable</td>   
+                  
+                      <td *ngIf="s.Load_Balancing_Dual_CE_to_Dual_PEs!=null">  {{s.Load_Balancing_Dual_CE_to_Dual_PEs }} </td> <td style="color:#FF7900" *ngIf="s.Load_Balancing_Dual_CE_to_Dual_PEs==null" >Not Applicable</td>   
+                      <td *ngIf="s.Load_Balancing_Primary!=null">  {{s.Load_Balancing_Primary }} </td> <td style="color:#FF7900" *ngIf="s.Load_Balancing_Primary==null" >Not Applicable</td>   
+                      <td *ngIf="s.Load_Balancing_Secondary!=null">  {{s.Load_Balancing_Secondary }} </td> <td style="color:#FF7900" *ngIf="s.Load_Balancing_Secondary==null" >Not Applicable</td>   
+                      <td *ngIf="s.Load_Balancing_Associated_Router_Name!=null">  {{s.Load_Balancing_Associated_Router_Name }} </td> <td style="color:#FF7900" *ngIf="s.Load_Balancing_Associated_Router_Name==null" >Not Applicable</td>   
+                      <td *ngIf="s.Load_Balancing_SOO_DB_Value!=null">  {{s.Load_Balancing_SOO_DB_Value }} </td> <td style="color:#FF7900" *ngIf="s.Load_Balancing_SOO_DB_Value==null" >Not Applicable</td>   
+                      <td *ngIf="s.Path_Availability_Reporting!=null">  {{s.Path_Availability_Reporting }} </td> <td style="color:#FF7900" *ngIf="s.Path_Availability_Reporting==null" >Not Applicable</td>   
+                      <td *ngIf="s.Path_Performance_Reporting!=null">  {{s.Path_Performance_Reporting }} </td> <td style="color:#FF7900" *ngIf="s.Path_Performance_Reporting==null" >Not Applicable</td>   
+                      <td *ngIf="s.Router_Performance_Reporting!=null">  {{s.Router_Performance_Reporting }} </td> <td style="color:#FF7900" *ngIf="s.Router_Performance_Reporting==null" >Not Applicable</td>   
+                      <td *ngIf="s.Path_Availability_SLA!=null">  {{s.Path_Availability_SLA }} </td> <td style="color:#FF7900" *ngIf="s.Path_Availability_SLA==null" >Not Applicable</td>   
+                      <td *ngIf="s.Path_Performance_SLA!=null">  {{s.Path_Performance_SLA }} </td> <td style="color:#FF7900" *ngIf="s.Path_Performance_SLA==null" >Not Applicable</td>   
+                      <td *ngIf="s.Real_time_Path_Performance_Monitoring!=null">  {{s.Real_time_Path_Performance_Monitoring }} </td> <td style="color:#FF7900" *ngIf="s.Real_time_Path_Performance_Monitoring==null" >Not Applicable</td>   
+                      <td *ngIf="s.Real_time_Router_Monitoring!=null">  {{s.Real_time_Router_Monitoring }} </td> <td style="color:#FF7900" *ngIf="s.Real_time_Router_Monitoring==null" >Not Applicable</td>   
+                      <td *ngIf="s.Site_Availability_Reporting!=null">  {{s.Site_Availability_Reporting }} </td> <td style="color:#FF7900" *ngIf="s.Site_Availability_Reporting==null" >Not Applicable</td>   
+                      <td *ngIf="s.Site_Availability_SLA!=null">  {{s.Site_Availability_SLA }} </td> <td style="color:#FF7900" *ngIf="s.Site_Availability_SLA==null" >Not Applicable</td>   
+                      <td *ngIf="s.IP_Bandwidth_Utilization_Reporting!=null">  {{s.IP_Bandwidth_Utilization_Reporting }} </td> <td style="color:#FF7900" *ngIf="s.IP_Bandwidth_Utilization_Reporting==null" >Not Applicable</td>   
+                        
+                  </tr>
+                    </tbody>
+                  </table>
+                  <table id="sesame_fileade_meshing" *ngIf="myselect==='sesame_fileade_meshing'"  class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead >
+                      <th>Device Name</th>    
+                      <th>Customer Code</th>
+                      <th>Customer Name</th>
+                      <th>RFS Date</th>
+                      <th>Gold Reference Number</th>
+                      <th>ip_service_type_properties</th>
+                      <th>D1_D2_D3</th>
+                      <th>D1</th>
+                      <th>D2</th>
+                      <th>D3</th>
+                      <th>D1_D2</th>
+                      <th>full_D2</th>
+                      <th>full_D1</th>
+                      <th>flexible</th>
+                      <th>rt_voice</th>
+                      <th>rt_video</th>
+                      <th> number_of_voip_channels</th>
+                      <th>rt_vo_bandwidth</th>
+                      <th> number_of_ipt_channels </th> <th>rt_vo_bandwidth</th> <th> rt_vi_bandwidth</th>
+                      <th> interactive_video_throughput</th> <th>telepresence_throughput</th> <th>voice_trunking_type</th> 
+                            </thead>
+                    <tbody>
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                      <td *ngIf="s.Router_Name!=null" >{{s.Router_Name}}</td><td style="color:#FF7900" *ngIf="s.Router_Name==null" >Not Applicable</td> 
+                      <td *ngIf="s.customer_code!=null"> {{s.customer_code}} </td>	 <td style="color:#FF7900" *ngIf="s.customer_code==null" >Not Applicable</td> 
+                      <td *ngIf="s.customer_name!=null">{{s.customer_name}} </td>   <td style="color:#FF7900" *ngIf="s.customer_name==null" >Not Applicable</td> 
+                      <td *ngIf="s.rfs_date!=null"> {{s.rfs_date }} </td>	 <td style="color:#FF7900" *ngIf="s.rfs_date==null" >Not Applicable</td>   
+                      <td *ngIf="s.gold_reference_number!=null">  {{s.gold_reference_number }} </td> <td style="color:#FF7900" *ngIf="s.gold_reference_number==null" >Not Applicable</td>   
+                      <td *ngIf=" s.ip_service_type_properties!=null">  {{s.ip_service_type_properties }} </td> <td style="color:#FF7900" *ngIf="s.ip_service_type_properties==null" >Not Applicable</td>   
+                      <td *ngIf="s.D1_D2_D3 !=null ">  {{s.D1_D2_D3 }} </td>  <td style="color:#FF7900" *ngIf="s.D1_D2_D3==null" >Not Applicable</td>   
+                      <td *ngIf=" s.D1!=null">  {{ s.D1 }} </td> <td style="color:#FF7900" *ngIf="s.D1==null" >Not Applicable</td>   
+                      <td *ngIf="s.D2!=null">  {{s.D2 }} </td> <td style="color:#FF7900" *ngIf="s.D2==null" >Not Applicable</td>   
+                      <td *ngIf="s.D3!=null">  {{s.D3 }} </td> <td style="color:#FF7900" *ngIf="s.D3==null" >Not Applicable</td>   
+                      <td *ngIf="s.D1_D2!=null">  {{s.D1_D2 }} </td> <td style="color:#FF7900" *ngIf="s.D1_D2==null" >Not Applicable</td>   
+                      <td *ngIf="s.full_D2!=null">  {{s.full_D2 }} </td> <td style="color:#FF7900" *ngIf="s.full_D2==null" >Not Applicable</td>   
+                      <td *ngIf="s.full_D1!=null">  {{s.full_D1 }} </td> <td style="color:#FF7900" *ngIf="s.full_D1==null" >Not Applicable</td>   
+                      <td *ngIf="s.flexible!=null">  {{s.flexible }} </td> <td style="color:#FF7900" *ngIf="s.flexible==null" >Not Applicable</td>   
+                      <td *ngIf="s.rt_voice!=null">  {{s.rt_voice }} </td> <td style="color:#FF7900" *ngIf="s.rt_voice==null" >Not Applicable</td>   
+                      <td *ngIf="s.rt_video!=null">  {{s.rt_video }} </td> <td style="color:#FF7900" *ngIf="s.rt_video==null" >Not Applicable</td>   
+                      <td *ngIf="s.number_of_voip_channels!=null">  {{s.number_of_voip_channels }} </td> <td style="color:#FF7900" *ngIf="s.number_of_voip_channels==null" >Not Applicable</td>   
+                      <td *ngIf="s.rt_vo_bandwidth!=null">  {{s.rt_vo_bandwidth }} </td> <td style="color:#FF7900" *ngIf="s.rt_vo_bandwidth==null" >Not Applicable</td>   
+                      <td *ngIf="s.number_of_ipt_channels!=null">  {{s.number_of_ipt_channels }} </td> <td style="color:#FF7900" *ngIf="s.number_of_ipt_channels==null" >Not Applicable</td>   
+                      <td *ngIf="s.rt_vo_bandwidth!=null">  {{s.rt_vo_bandwidth }} </td> <td style="color:#FF7900" *ngIf="s.rt_vo_bandwidth==null" >Not Applicable</td>   
+                      <td *ngIf="s.rt_vi_bandwidth!=null">  {{s.rt_vi_bandwidth }} </td> <td style="color:#FF7900" *ngIf="s.rt_vi_bandwidth==null" >Not Applicable</td>   
+                      <td *ngIf="s.interactive_video_throughput!=null">  {{s.interactive_video_throughput }} </td> <td style="color:#FF7900" *ngIf="s.interactive_video_throughput==null" >Not Applicable</td>   
+                      <td *ngIf="s.telepresence_throughput!=null">  {{s.telepresence_throughput }} </td> <td style="color:#FF7900" *ngIf="s.telepresence_throughput==null" >Not Applicable</td>   
+                      <td *ngIf="s.voice_trunking_type!=null">  {{s.voice_trunking_type }} </td> <td style="color:#FF7900" *ngIf="s.voice_trunking_type==null" >Not Applicable</td>   
+                    
+                          
+                  </tr>
+                    </tbody>
+                  </table>   
+                  <table id="sesame_gold" *ngIf="myselect==='sesame_gold'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                   <thead>
+                      <th>Router Name</th>
+                      <th>GOLD ORDER NUMBER</th>
+                      <th>Customer Code</th>
+                      <th>Customer Name</th>
+                      <th>Execution Date</th>
+                      <th>Cut Date</th>
+                      <th>IT Reference</th>
+                      <th>Device Status</th>
+                      <th>Timer</th>
+                   </thead> 
+                   <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                   <!--
+                     
+                   -->   <td *ngIf="s.router_name!=null">{{s.router_name}}</td><td style="color:#FF7900" *ngIf="s.router_name==null" >Not Applicable</td>
+                      <td *ngIf="s.GOLD_ORDER_NUMBER!=null">{{s.GOLD_ORDER_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.GOLD_ORDER_NUMBER==null" >Not Applicable</td>
+                      <td *ngIf="s.customer_code!=null">{{s.customer_code}}</td><td style="color:#FF7900" *ngIf="s.customer_code==null" >Not Applicable</td>
+                      <td *ngIf="s.cust_name!=null">{{s.cust_name}}</td><td style="color:#FF7900" *ngIf="s.cust_name==null" >Not Applicable</td>
+                      <td *ngIf="s.Execution_date!=null">{{s.Execution_date}}</td><td style="color:#FF7900" *ngIf="s.Execution_date==null" >Not Applicable</td>
+                      <td *ngIf="s.CUT_DATE!=null">{{s.CUT_DATE}}</td><td style="color:#FF7900" *ngIf="s.CUT_DATE==null" >Not Applicable</td>
+                      <td *ngIf="s.ITReference!=null">{{s.ITReference}}</td><td style="color:#FF7900" *ngIf="s.ITReference==null" >Not Applicable</td>
+                      <td *ngIf="s.devicestatus!=null">{{s.devicestatus}}</td><td style="color:#FF7900" *ngIf="s.devicestatus==null" >Not Applicable</td>
+                      <td *ngIf="s.timer!=null">{{s.timer}}</td><td style="color:#FF7900" *ngIf="s.timer==null" >Not Applicable</td>
+                  </tr>
+                  </table>
+
+                  <table id="sesame_oceane" *ngIf="myselect==='sesame_oceane'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead>
+                       <th>Router Name</th>
+                       <th>GOLD ORDER NUMBER</th>
+                       <th>Customer Code</th>
+                       <th>Cust Name</th>
+                       <th>Execution Date</th>
+                       <th>Cut Date</th>
+                       <th>Site</th>
+                       <th>Product Identifier2</th>                   
+                    </thead> 
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                       <td *ngIf="s.router_name!=null">{{s.router_name}}</td><td style="color:#FF7900" *ngIf="s.router_name==null" >Not Applicable</td>
+                       <td *ngIf="s.GOLD_ORDER_NUMBER!=null">{{s.GOLD_ORDER_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.GOLD_ORDER_NUMBER==null" >Not Applicable</td>
+                       <td *ngIf="s.customer_code!=null">{{s.customer_code}}</td><td style="color:#FF7900" *ngIf="s.customer_code==null" >Not Applicable</td>
+                       <td *ngIf="s.cust_name!=null">{{s.cust_name}}</td><td style="color:#FF7900" *ngIf="s.cust_name==null" >Not Applicable</td>
+                       <td *ngIf="s.Execution_date!=null">{{s.Execution_date}}</td><td style="color:#FF7900" *ngIf="s.Execution_date==null" >Not Applicable</td>
+                       <td *ngIf="s.cut_date!=null">{{s.cut_date}}</td><td style="color:#FF7900" *ngIf="s.cut_date==null" >Not Applicable</td>
+                       <td *ngIf="s.Site!=null">{{s.Site}}</td><td style="color:#FF7900" *ngIf="s.Site==null" >Not Applicable</td>
+                       <td *ngIf="s.product_identifier2!=null">{{s.product_identifier2}}</td><td style="color:#FF7900" *ngIf="s.product_identifier2==null" >Not Applicable</td>
+                   </tr>
+                  </table>
+
+                  <table id="sesame_orche" *ngIf="myselect==='sesame_orche'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead>
+                       <th>Router Name</th>
+                       <th>GOLD ORDER NUMBER</th>
+                       <th>Customer Code</th>
+                       <th>Cust Name</th>
+                       <th>Execution Date</th>
+                       <th>Cut Date</th>
+                       <th>IT Reference</th>
+                       <th>Device Status</th>
+                       <th>Timer</th>
+                    </thead> 
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                       <td *ngIf="s.router_name!=null">{{s.router_name}}</td><td style="color:#FF7900" *ngIf="s.router_name==null" >Not Applicable</td>
+                       <td *ngIf="s.GOLD_ORDER_NUMBER!=null">{{s.GOLD_ORDER_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.GOLD_ORDER_NUMBER==null" >Not Applicable</td>
+                       <td *ngIf="s.customer_code!=null">{{s.customer_code}}</td><td style="color:#FF7900" *ngIf="s.customer_code==null" >Not Applicable</td>
+                       <td *ngIf="s.cust_name!=null">{{s.cust_name}}</td><td style="color:#FF7900" *ngIf="s.cust_name==null" >Not Applicable</td>
+                       <td *ngIf="s.Execution_date!=null">{{s.Execution_date}}</td><td style="color:#FF7900" *ngIf="s.Execution_date==null" >Not Applicable</td>
+                       <td *ngIf="s.cut_date!=null">{{s.cut_date}}</td><td style="color:#FF7900" *ngIf="s.cut_date==null" >Not Applicable</td>
+                       <td *ngIf="s.ITReference!=null">{{s.ITReference}}</td><td style="color:#FF7900" *ngIf="s.ITReference==null" >Not Applicable</td>
+                       <td *ngIf="s.devicestatus!=null">{{s.devicestatus}}</td><td style="color:#FF7900" *ngIf="s.devicestatus==null" >Not Applicable</td>
+                       <td *ngIf="s.timer!=null">{{s.timer}}</td><td style="color:#FF7900" *ngIf="s.timer==null" >Not Applicable</td>
+                   </tr>
+                  </table>
+
+                  <table id="sesame_flip" *ngIf="myselect==='sesame_flip'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead>
+                       <th>Router Name</th>
+                       <th>GOLD ORDER NUMBER</th>
+                       <th>Customer Code</th>
+                       <th>Company Name</th>
+                       <th>RFS Date</th>
+                       <th>Serial Number</th>
+                       <th>CPU Serial Number</th>
+                       <th>Site ID</th>
+                       <th>Site Name</th>
+                       <th>Part Number</th>
+                       <th>Revision</th>
+                       <th>Owned By</th>
+                       <th>Part description</th>
+                    </thead> 
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                       <td *ngIf="s.router_name!=null">{{s.router_name}}</td><td style="color:#FF7900" *ngIf="s.router_name==null" >Not Applicable</td>
+                       <td *ngIf="s.company_name!=null">{{s.company_name}}</td><td style="color:#FF7900" *ngIf="s.company_name==null" >Not Applicable</td>
+                       <td *ngIf="s.customer_code!=null">{{s.customer_code}}</td><td style="color:#FF7900" *ngIf="s.customer_code==null" >Not Applicable</td>
+                       <td *ngIf="s.rfs_date!=null">{{s.rfs_date}}</td><td style="color:#FF7900" *ngIf="s.rfs_date==null" >Not Applicable</td>
+                       <td *ngIf="s.searchkey1!=null">{{s.searchkey1}}</td><td style="color:#FF7900" *ngIf="s.searchkey1==null" >Not Applicable</td>
+                       <td *ngIf="s.cpu_serial!=null">{{s.cpu_serial}}</td><td style="color:#FF7900" *ngIf="s.cpu_serial==null" >Not Applicable</td>
+                       <td *ngIf="s.siteid!=null">{{s.siteid}}</td><td style="color:#FF7900" *ngIf="s.siteid==null" >Not Applicable</td>
+                       <td *ngIf="s.sitename!=null">{{s.sitename}}</td><td style="color:#FF7900" *ngIf="s.sitename==null" >Not Applicable</td>
+                       <td *ngIf="s.partnumber!=null">{{s.partnumber}}</td><td style="color:#FF7900" *ngIf="s.partnumber==null" >Not Applicable</td>
+                       <td *ngIf="s.revision!=null">{{s.revision}}</td><td style="color:#FF7900" *ngIf="s.revision==null" >Not Applicable</td>
+                       <td *ngIf="s.ownby!=null">{{s.ownby}}</td><td style="color:#FF7900" *ngIf="s.ownby==null" >Not Applicable</td>
+                       <td *ngIf="s.partdescription!=null">{{s.partdescription}}</td><td style="color:#FF7900" *ngIf="s.partdescription==null" >Not Applicable</td>
+                       
+                       
+                       
+                      </tr>
+                  </table>
+
+                  <table id="sesame_SEENCSA" *ngIf="myselect==='sesame_SEENCSA'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                    <thead>
+                      <th>Customer Name</th>
+                      <th>Reachability</th>
+                      <th>Customer Code</th>
+                      <th>Site Id</th>
+                      <th>Up Time</th>
+                      <th>Host Name</th>
+                      <th>CPU Serial Number</th>
+                      <th>Site Health</th>
+                      <th>Monitoring IP</th>
+
+                    </thead> 
+                    <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                      <td *ngIf="s.customerName!=null">{{s.customerName}}</td><td style="color:#FF7900" *ngIf="s.customerName==null" >Not Applicable</td>
+                      <td *ngIf="s.reachability!=null">{{s.reachability}}</td><td style="color:#FF7900" *ngIf="s.reachability==null" >Not Applicable</td>
+                      <td *ngIf="s.customerCode!=null">{{s.customerCode}}</td><td style="color:#FF7900" *ngIf="s.customerCode==null" >Not Applicable</td>
+                      <td *ngIf="s.siteId!=null">{{s.siteId}}</td><td style="color:#FF7900" *ngIf="s.siteId==null" >Not Applicable</td>
+                      <td *ngIf="s.uptime!=null">{{s.uptime}}</td><td style="color:#FF7900" *ngIf="s.uptime==null" >Not Applicable</td>
+                      <td *ngIf="s.hostName!=null">{{s.hostName}}</td><td style="color:#FF7900" *ngIf="s.hostName==null" >Not Applicable</td>
+                      <td *ngIf="s.cpuSerialNumber!=null">{{s.cpuSerialNumber}}</td><td style="color:#FF7900" *ngIf="s.cpuSerialNumber==null" >Not Applicable</td>
+                      <td *ngIf="s.siteHealth!=null">{{s.siteHealth}}</td><td style="color:#FF7900" *ngIf="s.siteHealth==null" >Not Applicable</td>
+                      <td *ngIf="s.monitoringIp!=null">{{s.monitoringIp}}</td><td style="color:#FF7900" *ngIf="s.monitoringIp==null" >Not Applicable</td>
+ 
+                       
+                       
+                      </tr>
+                  </table>
+              </div>
+      
+              <div style="position:relative;top:10px;left:10px"> <!--pagination div-->
+                      <table>
+                        <tr>
+                          <td>     
+                          <ngb-pagination class="dataTables_paginate paging_numbers" [collectionSize]="sesame_data.length" [(page)]="page"  [boundaryLinks]="true" 
+                          [pageSize]="pageSize" class="d-flex justify-content-center">
+                          <ng-template ngbPaginationPages let-page let-pages="pages">
+                            <li class="ngb-custom-pages-item" *ngIf="pages.length > 0">
+                                <div class="mb-3 d-flex flex-nowrap px-2">
+                                  <label
+                                      id="paginationInputLabel"
+                                      for="paginationInput"
+                                      class="col-form-label me-2 ms-1"
+                                  >Page</label>
+                                  <input #i
+                                      type="text"
+                                      inputmode="numeric"
+                                      pattern="[0-9]*"
+                                      class="form-control custom-pages-input"
+                                      id="paginationInput"
+                                      [value]="page"
+                                      (keyup.enter)="selectPage(i.value)"
+                                      (blur)="selectPage(i.value)"
+                                      (input)="formatInput($any($event).target)"
+                                      aria-labelledby="paginationInputLabel paginationDescription"
+                                      style="width: 2.5rem"
+                                  />
+                                  <span id="paginationDescription" class="col-form-label text-nowrap px-2">
+                                      of {{pages.length}}</span>
+                                </div>
+                            </li>
+                        </ng-template>
+                        </ngb-pagination>
+                        </td> 
+                        <td><b><label style="position:absolute;top:10px;left:800px;font-family: Helvetica;color: #FF7900;">Showing total records:{{sesame_data.length}}</label></b></td>
+                        </tr>
+                      </table>
+              </div>
+        
+          </div>
+        
+          <div id="Salto" class="tabcontent">
+                  
+                <label style="position:relative ;left:650px; display: inline-block;font-family:helvetica;" >        
+                  <div class="row" style="margin-top:10px;">
+                    <div class="form-group col-md-4">
+                      <select #mySelect1 class="form-select" aria-label="Disabled select example" (change)="search($event,mySelect1.value)">
+               
+                        <option value="salto"> <li><button class="dropdown-item" type="button">Salto</button></li> </option>
+                        <option value="salto_gold"> <li><button class="dropdown-item" type="button">Gold</button></li> </option>
+                        <option value="salto_oceane"> <li><button class="dropdown-item" type="button">Oceane</button></li> </option>
+                        <option value="salto_orces"> <li><button class="dropdown-item" type="button">Orchestra</button></li> </option>
+                        
+          
+                      </select>
+                    </div>
+                    <div class="form-group col-md-5">
+                    <label style="margin-top:5px;" >  Show <select name="pageSize" (change)="selectPageSize($event)" style="padding-top: .1875rem;
+                      padding-bottom: .1875rem;">
+                        <option *ngFor = "let size of pageSizeOptions" [value]="size">{{size}}</option>
+                      </select> entries
+                    </label> 
+                    </div>
+        
+                    <div class="form-group col-md-3" >
+                      <button  (click)="exportexcel(sesame_data)" Style="cursor: pointer;color:white;background-color:black;position:relative;width:40px;height: 35px;">
+                          <i class="material-icons" style="vertical-align: middle;">cloud_download</i>
+                      </button> 
+                    </div>
+                  </div>
+                </label>
+
+                <div class="table-responsive" >
+                <!-- <table cellpadding="5px" cellspacing="5px">
+                    <thead ><th style="Color:#FF7900;">Sesame Application Data</th></thead>  
+                  </table>--> 
+                
+                    <table id="salto" *ngIf="myselect==='salto'"  class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                      <thead  >
+                        <th>id</th>
+                        <th>IC01_ID</th>
+                        <th>CUST_NAME</th>
+                        <th>EQPT_NAME</th>
+                        <th>DVCE_TYPE</th>
+                        <th>STC_COMMERCIAL_ORDEREF</th>
+                        <th>SITE_ID</th>
+                        <th>SITE_ORANGE_NAME</th>
+                        <th>SITE_CUSTOMER_NAME</th>
+                        <th>DVCE_STATUS</th>
+                        <th>RSS_CUSTOMER_DEFINED_CODE</th>
+                        <th>STC_ORDREF</th>
+                        <th>STC_READY_FOR_BILLING_DATE</th>
+                        <th>STC_RFS_DATE</th>
+                        <th>RSS_ID</th>
+                        <th>DVCE_MAIN_IPADDRESS</th>
+                        <th>DVCE_CUSTOMER_IP_ADDRESS</th>
+                        <th>DVCE_NAME</th>
+                        <th>DVCE_CHASSIS_NAME</th>
+                        <th>STC_PRODUCT_TYPE</th>
+                        <th>STC_PRODUCT_MODE</th>
+                        <th>STC_STATUS</th>
+                        <th>SITE_OWNER</th>
+                        <th>ADDR_ID</th>
+                        <th>ADDR_ADDRESS1</th>
+                        <th>ADDR_BUILDING</th>
+                        <th>ADDR_ROOM</th>
+                        <th>ADDR_FLOOR</th>
+                        <th>ADDR_ZIP_CODE</th>
+                        <th>ADDR_CITY_NAME</th>
+                        <th>ADDR_CITYIATA_CODE</th>
+                        <th>ADDR_STATE_NAME</th>
+                        <th>ADDR_STATE_CODE</th>
+                        <th>CTRY_COUNTRYISO3_CODE</th>
+                        <th>CTRY_NAME</th>
+                        <th>STC_ORDER_TYPE</th>
+                        <th>STC_ORDERCREATION_DATE</th>
+                        <th>STC_ORDERCLOSURE_DATE</th>
+                        <th>CONT_ID_PRIMARY</th>
+                        <th>STC_COMMUNITY</th>
+                        <th>RSS_STATUS</th>
+                        <th>EQPT_ID</th>
+                        <th>EQPT_STATUS</th>
+                        <th>RSS_TYPE</th>
+                        <th>RSS_ORANGE_NAME</th>
+                        <th>SITE_TYPE</th>
+                        <th>SITE_CODE</th>
+                        <th>SITE_CONSTRAINT</th>
+                        <th>SITE_LOCALCOMPANY_NAME</th>
+                        <th>SITE_LOCAL_IC01</th>
+                        <th>SITE_VALIDATION_DONE</th>
+                        <th>SITE_MANNED</th>
+                        <th>SITE_MOVING_LOCATION</th>
+                        <th>SITE_TIMEZONE_NAME</th>
+                        <th>SITE_TIMEZONE_VALUE</th>
+                        <th>SITE_OPERATING_HOURS</th>
+                        <th>SITE_PHONE_NUMBER</th>
+                        <th>SITE_FAX_NUMBER</th>
+                        <th>SITE_SOURCE_CREATION_DATE</th>
+                        <th>SITE_SOURCE_MODIFICATION_DATE</th>
+                        <th>SITE_STATUS</th>
+                        <th>CONT_ID_SITE</th>
+                        <th>SITE_SIRET</th>
+                        <th>SITE_CREATION_DATE</th>
+                        <th>SITE_LASTMODIF_DATE</th>
+                        <th>ADDR_ADDRESS2</th>
+                        <th>ADDR_ADDRESS3</th>
+                        <th>ADDR_STAIRS</th>
+                        <th>ADDR_LATITUDE</th>
+                        <th>ADDR_LONGITUDE</th>
+                        <th>ADDR_GEOACCURACY</th>
+                        <th>ADDR_SOURCE_CREATION_DATE</th>
+                        <th>ADDR_SOURCE_MODIFICATION_DATE</th>
+                        <th>ADDR_STATUS</th>
+                        <th>ADDR_TYPE</th>
+                        <th>ADDR_COMMENT</th>
+                        <th>ADDR_OWNER</th>
+                        <th>ADDR_CREATION_DATE</th>
+                        <th>ADDR_LASTMODIF_DATE</th>
+                        <th>STC_ID</th>
+                        <th>STC_COMMERCIAL_OFFER_ID</th>
+                        <th>STC_PROJECT_IDENTIFIER</th>
+                        <th>STC_ORDEREDSERVICETYPE_CODE</th>
+                        <th>CONT_ID_SECONDARY</th>
+                        <th>STC_CYCLE</th>
+                        <th>STC_STATUS_LASTUPDATE_DATE</th>
+                        <th>STC_MODIF_TYPE</th>
+                        <th>STC_SAM_REFERENCE</th>
+                        <th>TSRV_ID</th>
+                        <th>STC_COMPLETION_DATE</th>
+                        <th>RSS_VERSION</th>
+                        <th>TSRV_VERSION</th>
+                        <th>RSS_ISCURRENT</th>
+                        <th>RSS_GROUP_ID</th>
+                        <th>RSS_GROUP_NAME</th>
+                        <th>RSS_RFS_DATE</th>
+                        <th>RSS_CYCLE</th>
+                        <th>EQPT_VERSION</th>
+                        <th>EQPT_ISCURRENT</th>
+                        <th>EQPT_TYPE</th>
+                        <th>EQPT_RFS_DATE</th>
+                        <th>DVCE_ID</th>
+                        <th>DVCE_VERSION</th>
+                        <th>DVCE_ISCURRENT</th>
+                        <th>DVCE_TYPE_FLAG</th>
+                        <th>DVCE_IOS_VERSION</th>
+                        <th>CEOD_ID</th>
+                        <th>LSPP_STACK</th>
+                        <th>LSPP_SWITCH_NB</th>
+                        <th>LSPP_STACK_MASTER_NAME</th>
+                        <th>LSPP_LAYER</th>
+                        <th>MDIA_EUCLID</th>
+                        <th>MDIA_CYCLE</th>
+                        <th>MDIA_QUOTE_ID</th>
+                        <th>CARR_ID</th>
+                        <th>MDIA_TYPE</th>
+                        <th>MDIA_STATUS</th>
+                        <th>MSOF_CODE</th>
+                        <th>MSOF_NAME</th>
+                        <th>MSOF_CONNECTION_TYPE</th>
+                        <th>CARRIER_CIRCUIT_REFERENCE</th>
+                        
+                          
+                          			  
+                      </thead>
+                      <tbody>
+                      <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                        <td *ngIf="s.id!=null">{{s.id}}</td><td style="color:#FF7900" *ngIf="s.id==null" >Not Applicable</td>
+                        <td *ngIf="s.IC01_ID!=null">{{s.IC01_ID}}</td><td style="color:#FF7900" *ngIf="s.IC01_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.CUST_NAME!=null">{{s.CUST_NAME}}</td><td style="color:#FF7900" *ngIf="s.CUST_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.EQPT_NAME!=null">{{s.EQPT_NAME}}</td><td style="color:#FF7900" *ngIf="s.EQPT_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_TYPE!=null">{{s.DVCE_TYPE}}</td><td style="color:#FF7900" *ngIf="s.DVCE_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_COMMERCIAL_ORDEREF!=null">{{s.STC_COMMERCIAL_ORDEREF}}</td><td style="color:#FF7900" *ngIf="s.STC_COMMERCIAL_ORDEREF==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_ID!=null">{{s.SITE_ID}}</td><td style="color:#FF7900" *ngIf="s.SITE_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_ORANGE_NAME!=null">{{s.SITE_ORANGE_NAME}}</td><td style="color:#FF7900" *ngIf="s.SITE_ORANGE_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_CUSTOMER_NAME!=null">{{s.SITE_CUSTOMER_NAME}}</td><td style="color:#FF7900" *ngIf="s.SITE_CUSTOMER_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_STATUS!=null">{{s.DVCE_STATUS}}</td><td style="color:#FF7900" *ngIf="s.DVCE_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_CUSTOMER_DEFINED_CODE!=null">{{s.RSS_CUSTOMER_DEFINED_CODE}}</td><td style="color:#FF7900" *ngIf="s.RSS_CUSTOMER_DEFINED_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_ORDREF!=null">{{s.STC_ORDREF}}</td><td style="color:#FF7900" *ngIf="s.STC_ORDREF==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_READY_FOR_BILLING_DATE!=null">{{s.STC_READY_FOR_BILLING_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_READY_FOR_BILLING_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_RFS_DATE!=null">{{s.STC_RFS_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_RFS_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_ID!=null">{{s.RSS_ID}}</td><td style="color:#FF7900" *ngIf="s.RSS_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_MAIN_IPADDRESS!=null">{{s.DVCE_MAIN_IPADDRESS}}</td><td style="color:#FF7900" *ngIf="s.DVCE_MAIN_IPADDRESS==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_CUSTOMER_IP_ADDRESS!=null">{{s.DVCE_CUSTOMER_IP_ADDRESS}}</td><td style="color:#FF7900" *ngIf="s.DVCE_CUSTOMER_IP_ADDRESS==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_NAME!=null">{{s.DVCE_NAME}}</td><td style="color:#FF7900" *ngIf="s.DVCE_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_CHASSIS_NAME!=null">{{s.DVCE_CHASSIS_NAME}}</td><td style="color:#FF7900" *ngIf="s.DVCE_CHASSIS_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_PRODUCT_TYPE!=null">{{s.STC_PRODUCT_TYPE}}</td><td style="color:#FF7900" *ngIf="s.STC_PRODUCT_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_PRODUCT_MODE!=null">{{s.STC_PRODUCT_MODE}}</td><td style="color:#FF7900" *ngIf="s.STC_PRODUCT_MODE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_STATUS!=null">{{s.STC_STATUS}}</td><td style="color:#FF7900" *ngIf="s.STC_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_OWNER!=null">{{s.SITE_OWNER}}</td><td style="color:#FF7900" *ngIf="s.SITE_OWNER==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_ID!=null">{{s.ADDR_ID}}</td><td style="color:#FF7900" *ngIf="s.ADDR_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_ADDRESS1!=null">{{s.ADDR_ADDRESS1}}</td><td style="color:#FF7900" *ngIf="s.ADDR_ADDRESS1==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_BUILDING!=null">{{s.ADDR_BUILDING}}</td><td style="color:#FF7900" *ngIf="s.ADDR_BUILDING==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_ROOM!=null">{{s.ADDR_ROOM}}</td><td style="color:#FF7900" *ngIf="s.ADDR_ROOM==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_FLOOR!=null">{{s.ADDR_FLOOR}}</td><td style="color:#FF7900" *ngIf="s.ADDR_FLOOR==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_ZIP_CODE!=null">{{s.ADDR_ZIP_CODE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_ZIP_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_CITY_NAME!=null">{{s.ADDR_CITY_NAME}}</td><td style="color:#FF7900" *ngIf="s.ADDR_CITY_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_CITYIATA_CODE!=null">{{s.ADDR_CITYIATA_CODE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_CITYIATA_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_STATE_NAME!=null">{{s.ADDR_STATE_NAME}}</td><td style="color:#FF7900" *ngIf="s.ADDR_STATE_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_STATE_CODE!=null">{{s.ADDR_STATE_CODE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_STATE_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.CTRY_COUNTRYISO3_CODE!=null">{{s.CTRY_COUNTRYISO3_CODE}}</td><td style="color:#FF7900" *ngIf="s.CTRY_COUNTRYISO3_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.CTRY_NAME!=null">{{s.CTRY_NAME}}</td><td style="color:#FF7900" *ngIf="s.CTRY_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_ORDER_TYPE!=null">{{s.STC_ORDER_TYPE}}</td><td style="color:#FF7900" *ngIf="s.STC_ORDER_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_ORDERCREATION_DATE!=null">{{s.STC_ORDERCREATION_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_ORDERCREATION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_ORDERCLOSURE_DATE!=null">{{s.STC_ORDERCLOSURE_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_ORDERCLOSURE_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.CONT_ID_PRIMARY!=null">{{s.CONT_ID_PRIMARY}}</td><td style="color:#FF7900" *ngIf="s.CONT_ID_PRIMARY==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_COMMUNITY!=null">{{s.STC_COMMUNITY}}</td><td style="color:#FF7900" *ngIf="s.STC_COMMUNITY==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_STATUS!=null">{{s.RSS_STATUS}}</td><td style="color:#FF7900" *ngIf="s.RSS_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.EQPT_ID!=null">{{s.EQPT_ID}}</td><td style="color:#FF7900" *ngIf="s.EQPT_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.EQPT_STATUS!=null">{{s.EQPT_STATUS}}</td><td style="color:#FF7900" *ngIf="s.EQPT_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_TYPE!=null">{{s.RSS_TYPE}}</td><td style="color:#FF7900" *ngIf="s.RSS_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_ORANGE_NAME!=null">{{s.RSS_ORANGE_NAME}}</td><td style="color:#FF7900" *ngIf="s.RSS_ORANGE_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_TYPE!=null">{{s.SITE_TYPE}}</td><td style="color:#FF7900" *ngIf="s.SITE_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_CODE!=null">{{s.SITE_CODE}}</td><td style="color:#FF7900" *ngIf="s.SITE_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_CONSTRAINT!=null">{{s.SITE_CONSTRAINT}}</td><td style="color:#FF7900" *ngIf="s.SITE_CONSTRAINT==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_LOCALCOMPANY_NAME!=null">{{s.SITE_LOCALCOMPANY_NAME}}</td><td style="color:#FF7900" *ngIf="s.SITE_LOCALCOMPANY_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_LOCAL_IC01!=null">{{s.SITE_LOCAL_IC01}}</td><td style="color:#FF7900" *ngIf="s.SITE_LOCAL_IC01==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_VALIDATION_DONE!=null">{{s.SITE_VALIDATION_DONE}}</td><td style="color:#FF7900" *ngIf="s.SITE_VALIDATION_DONE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_MANNED!=null">{{s.SITE_MANNED}}</td><td style="color:#FF7900" *ngIf="s.SITE_MANNED==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_MOVING_LOCATION!=null">{{s.SITE_MOVING_LOCATION}}</td><td style="color:#FF7900" *ngIf="s.SITE_MOVING_LOCATION==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_TIMEZONE_NAME!=null">{{s.SITE_TIMEZONE_NAME}}</td><td style="color:#FF7900" *ngIf="s.SITE_TIMEZONE_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_TIMEZONE_VALUE!=null">{{s.SITE_TIMEZONE_VALUE}}</td><td style="color:#FF7900" *ngIf="s.SITE_TIMEZONE_VALUE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_OPERATING_HOURS!=null">{{s.SITE_OPERATING_HOURS}}</td><td style="color:#FF7900" *ngIf="s.SITE_OPERATING_HOURS==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_PHONE_NUMBER!=null">{{s.SITE_PHONE_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.SITE_PHONE_NUMBER==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_FAX_NUMBER!=null">{{s.SITE_FAX_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.SITE_FAX_NUMBER==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_SOURCE_CREATION_DATE!=null">{{s.SITE_SOURCE_CREATION_DATE}}</td><td style="color:#FF7900" *ngIf="s.SITE_SOURCE_CREATION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_SOURCE_MODIFICATION_DATE!=null">{{s.SITE_SOURCE_MODIFICATION_DATE}}</td><td style="color:#FF7900" *ngIf="s.SITE_SOURCE_MODIFICATION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_STATUS!=null">{{s.SITE_STATUS}}</td><td style="color:#FF7900" *ngIf="s.SITE_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.CONT_ID_SITE!=null">{{s.CONT_ID_SITE}}</td><td style="color:#FF7900" *ngIf="s.CONT_ID_SITE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_SIRET!=null">{{s.SITE_SIRET}}</td><td style="color:#FF7900" *ngIf="s.SITE_SIRET==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_CREATION_DATE!=null">{{s.SITE_CREATION_DATE}}</td><td style="color:#FF7900" *ngIf="s.SITE_CREATION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.SITE_LASTMODIF_DATE!=null">{{s.SITE_LASTMODIF_DATE}}</td><td style="color:#FF7900" *ngIf="s.SITE_LASTMODIF_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_ADDRESS2!=null">{{s.ADDR_ADDRESS2}}</td><td style="color:#FF7900" *ngIf="s.ADDR_ADDRESS2==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_ADDRESS3!=null">{{s.ADDR_ADDRESS3}}</td><td style="color:#FF7900" *ngIf="s.ADDR_ADDRESS3==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_STAIRS!=null">{{s.ADDR_STAIRS}}</td><td style="color:#FF7900" *ngIf="s.ADDR_STAIRS==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_LATITUDE!=null">{{s.ADDR_LATITUDE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_LATITUDE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_LONGITUDE!=null">{{s.ADDR_LONGITUDE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_LONGITUDE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_GEOACCURACY!=null">{{s.ADDR_GEOACCURACY}}</td><td style="color:#FF7900" *ngIf="s.ADDR_GEOACCURACY==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_SOURCE_CREATION_DATE!=null">{{s.ADDR_SOURCE_CREATION_DATE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_SOURCE_CREATION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_SOURCE_MODIFICATION_DATE!=null">{{s.ADDR_SOURCE_MODIFICATION_DATE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_SOURCE_MODIFICATION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_STATUS!=null">{{s.ADDR_STATUS}}</td><td style="color:#FF7900" *ngIf="s.ADDR_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_TYPE!=null">{{s.ADDR_TYPE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_COMMENT!=null">{{s.ADDR_COMMENT}}</td><td style="color:#FF7900" *ngIf="s.ADDR_COMMENT==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_OWNER!=null">{{s.ADDR_OWNER}}</td><td style="color:#FF7900" *ngIf="s.ADDR_OWNER==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_CREATION_DATE!=null">{{s.ADDR_CREATION_DATE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_CREATION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDR_LASTMODIF_DATE!=null">{{s.ADDR_LASTMODIF_DATE}}</td><td style="color:#FF7900" *ngIf="s.ADDR_LASTMODIF_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_ID!=null">{{s.STC_ID}}</td><td style="color:#FF7900" *ngIf="s.STC_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_COMMERCIAL_OFFER_ID!=null">{{s.STC_COMMERCIAL_OFFER_ID}}</td><td style="color:#FF7900" *ngIf="s.STC_COMMERCIAL_OFFER_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_PROJECT_IDENTIFIER!=null">{{s.STC_PROJECT_IDENTIFIER}}</td><td style="color:#FF7900" *ngIf="s.STC_PROJECT_IDENTIFIER==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_ORDEREDSERVICETYPE_CODE!=null">{{s.STC_ORDEREDSERVICETYPE_CODE}}</td><td style="color:#FF7900" *ngIf="s.STC_ORDEREDSERVICETYPE_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.CONT_ID_SECONDARY!=null">{{s.CONT_ID_SECONDARY}}</td><td style="color:#FF7900" *ngIf="s.CONT_ID_SECONDARY==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_CYCLE!=null">{{s.STC_CYCLE}}</td><td style="color:#FF7900" *ngIf="s.STC_CYCLE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_STATUS_LASTUPDATE_DATE!=null">{{s.STC_STATUS_LASTUPDATE_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_STATUS_LASTUPDATE_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_MODIF_TYPE!=null">{{s.STC_MODIF_TYPE}}</td><td style="color:#FF7900" *ngIf="s.STC_MODIF_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_SAM_REFERENCE!=null">{{s.STC_SAM_REFERENCE}}</td><td style="color:#FF7900" *ngIf="s.STC_SAM_REFERENCE==null" >Not Applicable</td>
+                        <td *ngIf="s.TSRV_ID!=null">{{s.TSRV_ID}}</td><td style="color:#FF7900" *ngIf="s.TSRV_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_COMPLETION_DATE!=null">{{s.STC_COMPLETION_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_COMPLETION_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_VERSION!=null">{{s.RSS_VERSION}}</td><td style="color:#FF7900" *ngIf="s.RSS_VERSION==null" >Not Applicable</td>
+                        <td *ngIf="s.TSRV_VERSION!=null">{{s.TSRV_VERSION}}</td><td style="color:#FF7900" *ngIf="s.TSRV_VERSION==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_ISCURRENT!=null">{{s.RSS_ISCURRENT}}</td><td style="color:#FF7900" *ngIf="s.RSS_ISCURRENT==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_GROUP_ID!=null">{{s.RSS_GROUP_ID}}</td><td style="color:#FF7900" *ngIf="s.RSS_GROUP_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_GROUP_NAME!=null">{{s.RSS_GROUP_NAME}}</td><td style="color:#FF7900" *ngIf="s.RSS_GROUP_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_RFS_DATE!=null">{{s.RSS_RFS_DATE}}</td><td style="color:#FF7900" *ngIf="s.RSS_RFS_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.RSS_CYCLE!=null">{{s.RSS_CYCLE}}</td><td style="color:#FF7900" *ngIf="s.RSS_CYCLE==null" >Not Applicable</td>
+                        <td *ngIf="s.EQPT_VERSION!=null">{{s.EQPT_VERSION}}</td><td style="color:#FF7900" *ngIf="s.EQPT_VERSION==null" >Not Applicable</td>
+                        <td *ngIf="s.EQPT_ISCURRENT!=null">{{s.EQPT_ISCURRENT}}</td><td style="color:#FF7900" *ngIf="s.EQPT_ISCURRENT==null" >Not Applicable</td>
+                        <td *ngIf="s.EQPT_TYPE!=null">{{s.EQPT_TYPE}}</td><td style="color:#FF7900" *ngIf="s.EQPT_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.EQPT_RFS_DATE!=null">{{s.EQPT_RFS_DATE}}</td><td style="color:#FF7900" *ngIf="s.EQPT_RFS_DATE==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_ID!=null">{{s.DVCE_ID}}</td><td style="color:#FF7900" *ngIf="s.DVCE_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_VERSION!=null">{{s.DVCE_VERSION}}</td><td style="color:#FF7900" *ngIf="s.DVCE_VERSION==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_ISCURRENT!=null">{{s.DVCE_ISCURRENT}}</td><td style="color:#FF7900" *ngIf="s.DVCE_ISCURRENT==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_TYPE_FLAG!=null">{{s.DVCE_TYPE_FLAG}}</td><td style="color:#FF7900" *ngIf="s.DVCE_TYPE_FLAG==null" >Not Applicable</td>
+                        <td *ngIf="s.DVCE_IOS_VERSION!=null">{{s.DVCE_IOS_VERSION}}</td><td style="color:#FF7900" *ngIf="s.DVCE_IOS_VERSION==null" >Not Applicable</td>
+                        <td *ngIf="s.CEOD_ID!=null">{{s.CEOD_ID}}</td><td style="color:#FF7900" *ngIf="s.CEOD_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.LSPP_STACK!=null">{{s.LSPP_STACK}}</td><td style="color:#FF7900" *ngIf="s.LSPP_STACK==null" >Not Applicable</td>
+                        <td *ngIf="s.LSPP_SWITCH_NB!=null">{{s.LSPP_SWITCH_NB}}</td><td style="color:#FF7900" *ngIf="s.LSPP_SWITCH_NB==null" >Not Applicable</td>
+                        <td *ngIf="s.LSPP_STACK_MASTER_NAME!=null">{{s.LSPP_STACK_MASTER_NAME}}</td><td style="color:#FF7900" *ngIf="s.LSPP_STACK_MASTER_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.LSPP_LAYER!=null">{{s.LSPP_LAYER}}</td><td style="color:#FF7900" *ngIf="s.LSPP_LAYER==null" >Not Applicable</td>
+                        <td *ngIf="s.MDIA_EUCLID!=null">{{s.MDIA_EUCLID}}</td><td style="color:#FF7900" *ngIf="s.MDIA_EUCLID==null" >Not Applicable</td>
+                        <td *ngIf="s.MDIA_CYCLE!=null">{{s.MDIA_CYCLE}}</td><td style="color:#FF7900" *ngIf="s.MDIA_CYCLE==null" >Not Applicable</td>
+                        <td *ngIf="s.MDIA_QUOTE_ID!=null">{{s.MDIA_QUOTE_ID}}</td><td style="color:#FF7900" *ngIf="s.MDIA_QUOTE_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.CARR_ID!=null">{{s.CARR_ID}}</td><td style="color:#FF7900" *ngIf="s.CARR_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.MDIA_TYPE!=null">{{s.MDIA_TYPE}}</td><td style="color:#FF7900" *ngIf="s.MDIA_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.MDIA_STATUS!=null">{{s.MDIA_STATUS}}</td><td style="color:#FF7900" *ngIf="s.MDIA_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.MSOF_CODE!=null">{{s.MSOF_CODE}}</td><td style="color:#FF7900" *ngIf="s.MSOF_CODE==null" >Not Applicable</td>
+                        <td *ngIf="s.MSOF_NAME!=null">{{s.MSOF_NAME}}</td><td style="color:#FF7900" *ngIf="s.MSOF_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.MSOF_CONNECTION_TYPE!=null">{{s.MSOF_CONNECTION_TYPE}}</td><td style="color:#FF7900" *ngIf="s.MSOF_CONNECTION_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.CARRIER_CIRCUIT_REFERENCE!=null">{{s.CARRIER_CIRCUIT_REFERENCE}}</td><td style="color:#FF7900" *ngIf="s.CARRIER_CIRCUIT_REFERENCE==null" >Not Applicable</td>
+                         
+                      </tr>
+                      </tbody>
+                    </table>
+                    <table id="salto_gold" *ngIf="myselect==='salto_gold'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                      <thead>
+                        <th>EQPT NAME(Router Name)</th>
+                        <th>GOLD ORDER NUMBER</th>
+                        <th>IC01 ID</th>
+                        <th>cust_name</th>
+                        <th>CUSTOMER NAME</th>
+                        <th>BAN ID</th>
+                        <th>ORANGE SITE REFERENCE</th>
+                        <th>CORE SITE ID</th>
+                        <th>ADDRESS ID</th>
+                        <th>CUSTOMER SITE REFERENCE</th>
+                        <th>STC RFS DATE</th>
+                        <th>ORDER STATUS</th>
+                        <th>CONTRACTING PARTY</th>
+                        <th>CONTRACT NUMBER</th>
+                        <th>PRIMARY CONTACT NUMBER</th>
+                        <th>END USER</th>
+                        <th>ORDER TERM</th>
+                        <th>QUOTATION REFERENCE NUMBER</th>
+                        <th>CPE NAME</th>
+                        <th>VPN SERVICE BANDWIDTH</th>
+                        <th>ACCESS SPEED</th>
+                        <th>ACCESS TYPE</th>
+                        <th>QUOTED PoP ID</th>
+                        <th>DOCUMENT EXIST</th>
+                        <th>NOTE EXIST</th>
+                        <th>MILESTONE VALUE</th>
+                        <th>TRANSACTION STATUS</th>
+                        <th>TRANSACTION REMARKS</th>
+
+                      </thead> 
+                      <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                        <td *ngIf="s.EQPT_NAME!=null">{{s.EQPT_NAME}}</td><td style="color:#FF7900" *ngIf="s.EQPT_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.GOLD_ORDER_NUMBER!=null">{{s.GOLD_ORDER_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.GOLD_ORDER_NUMBER==null" >Not Applicable</td>
+                        <td *ngIf="s.IC01_ID!=null">{{s.IC01_ID}}</td><td style="color:#FF7900" *ngIf="s.IC01_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.cust_name!=null">{{s.cust_name}}</td><td style="color:#FF7900" *ngIf="s.cust_name==null" >Not Applicable</td>
+                        <td *ngIf="s.CUSTOMER_NAME!=null">{{s.CUSTOMER_NAME}}</td><td style="color:#FF7900" *ngIf="s.CUSTOMER_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.BAN_ID!=null">{{s.BAN_ID}}</td><td style="color:#FF7900" *ngIf="s.BAN_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.ORANGE_SITE_REFERENCE!=null">{{s.ORANGE_SITE_REFERENCE}}</td><td style="color:#FF7900" *ngIf="s.ORANGE_SITE_REFERENCE==null" >Not Applicable</td>
+                        <td *ngIf="s.CORE_SITE_ID!=null">{{s.CORE_SITE_ID}}</td><td style="color:#FF7900" *ngIf="s.CORE_SITE_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.ADDRESS_ID!=null">{{s.ADDRESS_ID}}</td><td style="color:#FF7900" *ngIf="s.ADDRESS_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.CUSTOMER_SITE_REFERENCE!=null">{{s.CUSTOMER_SITE_REFERENCE}}</td><td style="color:#FF7900" *ngIf="s.CUSTOMER_SITE_REFERENCE==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_RFS_DATE!=null">{{s.STC_RFS_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_RFS_DATE==null" >Not Applicable</td>
+                       
+                        <td *ngIf="s.ORDER_STATUS!=null">{{s.ORDER_STATUS}}</td><td style="color:#FF7900" *ngIf="s.ORDER_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.CONTRACTING_PARTY!=null">{{s.CONTRACTING_PARTY}}</td><td style="color:#FF7900" *ngIf="s.CONTRACTING_PARTY==null" >Not Applicable</td>
+                        <td *ngIf="s.CONTRACT_NUMBER!=null">{{s.CONTRACT_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.CONTRACT_NUMBER==null" >Not Applicable</td>
+                        <td *ngIf="s.PRIMARY_CONTACT_NUMBER!=null">{{s.PRIMARY_CONTACT_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.PRIMARY_CONTACT_NUMBER==null" >Not Applicable</td>
+                        <td *ngIf="s.END_USER!=null">{{s.END_USER}}</td><td style="color:#FF7900" *ngIf="s.END_USER==null" >Not Applicable</td>
+                        <td *ngIf="s.ORDER_TERM!=null">{{s.ORDER_TERM}}</td><td style="color:#FF7900" *ngIf="s.ORDER_TERM==null" >Not Applicable</td>
+                        <td *ngIf="s.QUOTATION_REFERENCE_NUMBER!=null">{{s.QUOTATION_REFERENCE_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.QUOTATION_REFERENCE_NUMBER==null" >Not Applicable</td>
+                        <td *ngIf="s.CPE_NAME!=null">{{s.CPE_NAME}}</td><td style="color:#FF7900" *ngIf="s.CPE_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.VPN_SERVICE_BANDWIDTH!=null">{{s.VPN_SERVICE_BANDWIDTH}}</td><td style="color:#FF7900" *ngIf="s.VPN_SERVICE_BANDWIDTH==null" >Not Applicable</td>
+                        <td *ngIf="s.ACCESS_SPEED!=null">{{s.ACCESS_SPEED}}</td><td style="color:#FF7900" *ngIf="s.ACCESS_SPEED==null" >Not Applicable</td>
+                        <td *ngIf="s.ACCESS_TYPE!=null">{{s.ACCESS_TYPE}}</td><td style="color:#FF7900" *ngIf="s.ACCESS_TYPE==null" >Not Applicable</td>
+                        <td *ngIf="s.QUOTED_PoP_ID!=null">{{s.QUOTED_PoP_ID}}</td><td style="color:#FF7900" *ngIf="s.QUOTED_PoP_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.DOCUMENT_EXIST!=null">{{s.DOCUMENT_EXIST}}</td><td style="color:#FF7900" *ngIf="s.DOCUMENT_EXIST==null" >Not Applicable</td>
+                        <td *ngIf="s.NOTE_EXIST!=null">{{s.NOTE_EXIST}}</td><td style="color:#FF7900" *ngIf="s.NOTE_EXIST==null" >Not Applicable</td>
+                        <td *ngIf="s.MILESTONE_VALUE!=null">{{s.MILESTONE_VALUE}}</td><td style="color:#FF7900" *ngIf="s.MILESTONE_VALUE==null" >Not Applicable</td>
+                        <td *ngIf="s.TRANSACTION_STATUS!=null">{{s.TRANSACTION_STATUS}}</td><td style="color:#FF7900" *ngIf="s.TRANSACTION_STATUS==null" >Not Applicable</td>
+                        <td *ngIf="s.TRANSACTION_REMARKS!=null">{{s.TRANSACTION_REMARKS}}</td><td style="color:#FF7900" *ngIf="s.TRANSACTION_REMARKS==null" >Not Applicable</td>
+                      </tr>
+                     </table>
+   
+                     <table id="salto_oceane" *ngIf="myselect==='salto_oceane'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                       <thead>
+                        <th>EQPT NAME(Router Name)</th>
+                        <th>GOLD ORDER NUMBER</th>
+                        <th>IC01 ID</th>
+                        <th>Customer Name</th>
+                        <th>Oceane Device Status</th>
+                        <th>OCEANE Site</th>
+                        <th>OCEANE Product Identifier2</th>                       
+                        <th>STC RFS DATE</th>
+                                           
+                       </thead> 
+                       <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                        <td *ngIf="s.EQPT_NAME!=null">{{s.EQPT_NAME}}</td><td style="color:#FF7900" *ngIf="s.EQPT_NAME==null" >Not Applicable</td>
+                        <td *ngIf="s.GOLD_ORDER_NUMBER!=null">{{s.GOLD_ORDER_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.GOLD_ORDER_NUMBER==null" >Not Applicable</td>
+                        <td *ngIf="s.IC01_ID!=null">{{s.IC01_ID}}</td><td style="color:#FF7900" *ngIf="s.IC01_ID==null" >Not Applicable</td>
+                        <td *ngIf="s.cust_name!=null">{{s.cust_name}}</td><td style="color:#FF7900" *ngIf="s.cust_name==null" >Not Applicable</td>
+                        <td *ngIf="s.oceane_device_status!=null">{{s.oceane_device_status}}</td><td style="color:#FF7900" *ngIf="s.oceane_device_status==null" >Not Applicable</td>
+                        <td *ngIf="s.OCEANE_Site!=null">{{s.OCEANE_Site}}</td><td style="color:#FF7900" *ngIf="s.OCEANE_Site==null" >Not Applicable</td>
+                        <td *ngIf="s.OCEANE_Product_Identifier2!=null">{{s.OCEANE_Product_Identifier2}}</td><td style="color:#FF7900" *ngIf="s.OCEANE_Product_Identifier2==null" >Not Applicable</td>
+                        <td *ngIf="s.STC_RFS_DATE!=null">{{s.STC_RFS_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_RFS_DATE==null" >Not Applicable</td>
+                      </tr>
+                     </table>
+   
+                     <table id="salto_orces" *ngIf="myselect==='salto_orces'" class="table table-striped table-bordered table-hover table-dataTable" cellpadding="20px" cellspacing="20px"  style="margin-bottom: 0">
+                       <thead>
+                        <th>EQPT_NAME</th>
+                        <th>GOLD_ORDER_NUMBER</th>
+                        <th>IC01_ID</th>
+                        <th>cust_name</th>
+                        <th>Orchestre_Device_Present</th>
+                        <th>STC RFS DATE</th>
+                       
+                        
+                       </thead> 
+                       <tr *ngFor="let s of sesame_data  | slice: (page-1) * pageSize : page * pageSize" >
+                        <td *ngIf="s.EQPT_NAME!=null">{{s.EQPT_NAME}}</td><td style="color:#FF7900" *ngIf="s.EQPT_NAME==null" >Not Applicable</td>
+                          <td *ngIf="s.GOLD_ORDER_NUMBER!=null">{{s.GOLD_ORDER_NUMBER}}</td><td style="color:#FF7900" *ngIf="s.GOLD_ORDER_NUMBER==null" >Not Applicable</td>
+                          <td *ngIf="s.IC01_ID!=null">{{s.IC01_ID}}</td><td style="color:#FF7900" *ngIf="s.IC01_ID==null" >Not Applicable</td>
+                          <td *ngIf="s.cust_name!=null">{{s.cust_name}}</td><td style="color:#FF7900" *ngIf="s.cust_name==null" >Not Applicable</td>
+                          <td *ngIf="s.Orchestre_Device_Present!=null">{{s.Orchestre_Device_Present}}</td><td style="color:#FF7900" *ngIf="s.Orchestre_Device_Present==null" >Not Applicable</td>
+                          <td *ngIf="s.STC_RFS_DATE!=null">{{s.STC_RFS_DATE}}</td><td style="color:#FF7900" *ngIf="s.STC_RFS_DATE==null" >Not Applicable</td>
+                        
+                        </tr>
+                     </table>
+                    
+                  
+                
+                
+                    
+                </div>
+            
+                <div style="position:relative;top:10px;left:10px"> <!--pagination div-->
+                    <table>
+                    
+                      <tr>
+                        <td>     
+                        <ngb-pagination class="dataTables_paginate paging_numbers" [collectionSize]="sesame_data.length" [(page)]="page"  [boundaryLinks]="true" 
+                        [pageSize]="pageSize" class="d-flex justify-content-center">
+                        <ng-template ngbPaginationPages let-page let-pages="pages">
+                          <li class="ngb-custom-pages-item" *ngIf="pages.length > 0">
+                              <div class="mb-3 d-flex flex-nowrap px-2">
+                                <label
+                                    id="paginationInputLabel"
+                                    for="paginationInput"
+                                    class="col-form-label me-2 ms-1"
+                                >Page</label>
+                                <input #i
+                                    type="text"
+                                    inputmode="numeric"
+                                    pattern="[0-9]*"
+                                    class="form-control custom-pages-input"
+                                    id="paginationInput"
+                                    [value]="page"
+                                    (keyup.enter)="selectPage(i.value)"
+                                    (blur)="selectPage(i.value)"
+                                    (input)="formatInput($any($event).target)"
+                                    aria-labelledby="paginationInputLabel paginationDescription"
+                                    style="width: 2.5rem"
+                                />
+                                <span id="paginationDescription" class="col-form-label text-nowrap px-2">
+                                    of {{pages.length}}</span>
+                              </div>
+                          </li>
+                      </ng-template>
+                      </ngb-pagination>
+                    </td>   
+                      
+                    <td>
+                    
+                        <b><label style="position:absolute;top:10px;left:800px;font-family: Helvetica;color: #FF7900;">Showing total records:{{sesame_data.length}}</label>
+                    </b>
+                    <!--<button type="button" class="btn btn-danger" 
+                            (click)="closePopup()">
+                      Close
+                    </button>-->
+                    </td>
+                  </tr>
+                    </table>
+                </div>
+
+          </div> <!-- Salto Tab close div-->
+        
+         
+        
+          
+         
+  
+  </div>
+</div>
+
+
+
+
+

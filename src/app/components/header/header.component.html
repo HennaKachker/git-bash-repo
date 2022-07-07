@@ -1,0 +1,85 @@
+<div class="row">
+    <div class="header">
+
+        <div class="row">
+            <div class="col-1"><img src="../../../assets/images/image.png" style="position: relative;width: 100px; height:50px;left:20px"></div>
+            <div class="col-2"> <h2 style="position: relative;left:20px;color: white; ">MATCH</h2> </div>
+            <div class="col-4"></div> 
+          <!--  <div class="col-2">
+              <label data-toggle="modal" data-target="#exampleModal"  (click)="openPopup()">About</label>
+              <div class="questionmark"><i></i></div>
+            
+            </div>--> 
+            <div class="dropdown" class="col-2" Style="display:inline;position:relative;top:20%;left:20%;width:20%;color:#FF7900;font-family: Helvetica;">
+        
+              <label  title="Profile" style="display:inline;position:relative;top:30%" (click)="isCollapsed = !isCollapsed" >Welcome,{{username}}
+                <i class="material-icons" style="vertical-align: middle;" aria-hidden="false" [ngbCollapse]="!isCollapsed">arrow_drop_down_circle</i>    
+                <i class="material-icons" style="vertical-align: middle;" aria-hidden="false" [ngbCollapse]="isCollapsed">arrow_drop_up</i>
+              </label>
+        
+            
+                <div class="dropdown-menu" style="  z-index:1;" aria-labelledby="dropdownMenuButton" [ngbCollapse]="isCollapsed" >
+                  <a class="dropdown-item"  data-toggle="modal" data-target="#exampleModal" (click)="openPopup()">Profile <i class="material-icons" style="vertical-align: middle;" aria-hidden="false" title="profile">person</i></a>
+                  <a class="dropdown-item"  type="button" title="Logout" value="Logout" id="logout" routerLink="/login"><!--Style="background:#000000; border-color: #000000; height: 10px; width:50px;position: relative;top:5px;left:700px;font-size:20px;color:#FF7900;font-family: Helvetica;"-->
+                    Logout <i class="material-icons" style="vertical-align: middle;" aria-hidden="false" title="Logout">exit_to_app</i>
+                  </a>
+                </div>
+            </div>
+            
+            <!--<div class="col-3 "><span  routerLink="/login"  style="display: inline;"><h5 style="color: white;position: relative;top:10px;left:100px;"> Welcome,Sonal <i class="material-icons" style="vertical-align: middle;">face</i></h5></span></div> 
+            -->
+        </div>  
+    </div> 
+    <div class="headerM"  >
+        <div class="row" > 
+            <div class="col-12">
+              <b>
+                <h3>
+                  <ul  style="font: bold 20px/35px Helvetica;">
+                    <li class="nav-item"><a class="nav-link"  routerLinkActive="active"
+                      [routerLinkActiveOptions]="{exact:true}" routerLink="/home">Home <i class="material-icons" style="vertical-align: middle;">home</i></a></li>
+                    <li class="nav-item"><a class="nav-link"  routerLink="/customer_view" routerLinkActive="active"><i class="material-icons" style="vertical-align: middle;">view_list</i>Customer View</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLink="/cessation" routerLinkActive="active"><i class="material-icons"  style="vertical-align: middle;">hourglass_full</i>Cessation</a></li>
+                    <li class="nav-item"><a class="nav-link"  routerLink="/checklist" routerLinkActive="active" ><i class="material-icons" style="vertical-align: middle;">check_circle_outline</i>Checklist</a></li>
+                    <li class="nav-item"><a class="nav-link" routerLinkActive="active"><i class="material-icons" style="vertical-align: middle;">security</i>Admin</a></li>
+                </ul>
+                </h3>
+              
+              </b>
+                
+            </div>
+        </div>
+    </div>
+
+   
+</div>
+<div class="modal"  data-backdrop="true" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" [ngStyle]="{'display':displayStyle}"  style="background-color: rgba(0, 0, 0, 0.5);z-index: 1;">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5><span class="color-orange">MATCH Portal</span><span lang_en=" / User profile" lang_fr=" / Profil de l'utilisateur" lang_t="text">&nbsp;/ User Profile</span></h5>
+          </div>
+          <div class="modal-body">
+              <div class="media">
+                  <i class="fas fa-user mr-3" style="font-size: 4em;"></i>
+                  <div class="media-body">
+                      <ul class="list-unstyled">
+                          <li style="padding-bottom: 10px;margin-right: 250px;"><b>CUID:&nbsp;</b><span id="aboutLblCuid">{{cuid}}</span></li>
+                          <li style="padding-bottom: 10px;margin-right: 250px;"><b lang_en="Firstname: " lang_fr="Prénom: " lang_t="text">User:&nbsp;</b><span id="aboutLblFirstname">{{username}}</span></li>
+                          <li style="padding-bottom: 10px;margin-right: 250px;"><b>Role:&nbsp;</b><span id="aboutLblPosition">{{role}}</span></li>
+                          <li style="padding-bottom: 10px;margin-right: 250px;"><b>Email:&nbsp;</b><span id="aboutLblPosition">{{email}}</span></li>
+                          <!--<li style="padding-bottom: 10px;"><b>Position:&nbsp;</b><span id="aboutLblPosition"></span></li>
+                          <li><b>Organisation:&nbsp;</b><br /><span id="aboutLblOrganization"></span></li>-->
+                          <li></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary btn-sm" (click)="closePopup();isCollapsed = !isCollapsed"  data-dismiss="modal" lang_en="CLOSE" lang_fr="FERMER" lang_t="text">CLOSE</button>
+          </div>
+      </div>
+  </div>
+  </div>
+  
+

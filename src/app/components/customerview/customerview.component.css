@@ -1,0 +1,137 @@
+/*.row::after {
+  content: "";
+  clear: both;
+  display: table;
+  grid-auto-flow: column;
+}
+
+[class*="col-"] {
+  float: left;
+  padding: 0;
+ 
+}
+.inputs{
+  width:100%;
+  height: 30px;
+  box-shadow: 1px 1px;
+  
+}
+.search{
+  width:50%;
+  height: 30px;
+  box-shadow: 1px 1px;
+  margin-left: 20px;
+  
+}
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+*/
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+.table-hover tbody tr:hover {
+  color: #000;
+  background-color: #FF7900 ;
+}
+
+.table tr {
+  border-bottom: .0625rem solid #ccc;
+}
+
+.table thead tr {
+  border-bottom-width: .205rem;
+}
+.table tr {
+  vertical-align:center;
+
+  border-bottom: .0625rem solid #ccc;
+  border-bottom-width: 0.0625rem;
+
+}
+.table-dataTable {
+  clear: both;
+  margin-top: 6px !important;
+  margin-bottom: 6px !important;
+  max-width: none !important;
+  border-collapse: separate !important;
+  border-spacing: 0;
+
+}
+.table-responsive{
+  display: block;
+  overflow-x: auto;
+}
+thead{
+  white-space: nowrap;
+  background-color: #000000;color:white   ; 
+}
+td{
+  white-space: nowrap;
+
+  text-align: center;
+}
+
+.wrapper {
+  min-width: 1030px;
+
+  border-radius: 3px;
+  box-shadow: 0 1px 1px rgb(0 0 0 / 5%);
+}
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+
+/* Style the buttons inside the tab */
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+  font-size: 17px;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #FF7900;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none; 
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+label{
+  font-weight: bold;
+}

@@ -1,0 +1,316 @@
+body {
+    margin: 60px;
+    margin-top: 20px;
+    padding:20px;
+  }
+  
+  .topnav {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(17, 14, 14);
+    color: #f2f2f2;
+    padding: 14px 16px;
+    height: 70px;
+    width:100%;
+    
+  }
+  
+  .logoimage {
+      float: left;
+      position: absolute;
+      top:5px;
+      width: 20px;
+      height: 10px;
+  }
+  
+  .matchtext {
+       position: absolute;
+       color: rgba(248, 247, 247, 0.904);
+       left: 80px;
+       top: 25px;
+       font: bold 30px/20px Arial, Helvetica, sans-serif;
+  }
+  
+  
+  .questionmark:after {
+      position:absolute;
+      content: '?';
+      display: inline-block;
+      font-family: sans-serif;
+      font-weight: bold;
+      text-align: center;
+      font-size: 1.8em;
+      line-height: 0.8em;
+      border-radius: 50%;
+      margin-left: 6px;
+      padding: 0.13em 0.2em 0.09em 0.2em;
+      color: inherit;
+      border: 1px solid;
+      text-decoration: none;
+      right:60px;
+      Top: 15px;
+  }
+  .about {
+       position: absolute;
+       color: rgba(248, 247, 247, 0.904);
+       right: 100px;
+       Top: 25px;
+       font: bold 20px/20px Helvetica;
+  }
+  .leftdiv{
+      float:left;
+      position:relative;
+      left: 0; 
+      top: 21.5%;
+     
+      background-image: url("../../../assets/images/background.png");
+      width:60%;
+      height:100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      justify-content: center;
+  }
+  @media screen and (max-width: 2066px){
+      
+    .leftdiv{
+      float:left;
+      position:relative;
+      left: 0; 
+      top: 21.5%;
+     
+      background-image: url("../../../assets/images/background.png");
+      width:60%;
+      height:590px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      text-align: center;
+      justify-content: center;
+    }
+  }
+  .backgroundimage{
+      position: relative;
+      height: 100%;
+      object-fit:fill;
+  }
+  .Quote {
+      position:absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color:white;
+      font: bold 20px/8px Arial, Helvetica, sans-serif;
+  }
+  .welcome {
+       color:rgb(49, 47, 47);
+       font: bold 25px/10px Arial, Helvetica, sans-serif;
+  }
+  .black, .FTID{
+      color:black;
+      
+  }
+  .sideimage{
+      position:relative;
+      height:100px;
+      left:15%;
+      top: 40px;
+  }
+ /* .rightdiv{
+         
+    float:right;
+    position:relative;
+    left: 0; 
+    top: 0;
+    width:40%;
+    height:100%;
+      }*/
+  
+  .sideimagediv{
+      position:absolute;
+  }
+  .FTID {
+      position:absolute;
+      left: 70%;
+      top: 35%;
+      font:bolder;
+  }
+  .valueftid{
+      position:absolute;
+      left: 70%;
+      top: 40%;
+      background-color: rgba(199, 196, 196, 0.884);
+      width:300px;
+      height:30px;
+      border: none;
+      
+  }
+  .Password {
+      position:absolute;
+      left: 70%;
+      top: 48%;
+      font:bolder;
+  }
+  .valuepassword{
+      position:absolute;
+      left: 70%;
+      top: 52%;
+      background-color: rgba(199, 196, 196, 0.884);
+      width:300px;
+      height:30px;
+      border: none;   
+  }
+  .loginbtn{
+    position:absolute;
+    left: 70%;
+    top: 64%;
+    background-color: #595959 ;
+    color: #FFFFFF;
+    width:300px;
+    height:40px;
+    border: none;   
+}
+.signup{
+  position:absolute;
+  background-color: rgb(247, 243, 243);
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  width:230px;
+  height:23px;
+  left:73%;
+  top: 78%; 
+  font-size:3.5mm;
+
+}
+.or{
+  position:absolute;
+  left: 80%;
+  top: 73%;
+  color: #29c0d4;
+  font: bold 20px/10px Arial, Helvetica, sans-serif;
+}
+
+.forgetpassword{
+    position:absolute;
+    color: blue;
+    font: 15px/10px Arial, Helvetica, sans-serif;
+    left: 980px;
+    top:450px;
+
+}
+
+
+
+#signup {
+  position: relative;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 50%;
+    opacity: 0.9;
+  
+  }
+
+.signup-modal{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #474e5d;
+    padding-top: 50px;
+  }
+  
+  .signup-content{
+    background-color: #fefefe;
+    margin: 1% auto 10% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 60%;  
+    
+  }
+  #signup:hover{
+    color:#000000;
+    text-decoration: underline;
+    opacity:1;
+  }
+  .signup-input{
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: inline-block;
+    border: none;
+    background: #f1f1f1;
+  }
+/* Add a background color when the inputs get focus */
+
+/* Set a style for all buttons */
+.signupbtn {
+
+    background-color: #4BB4E6;
+    margin-left:110px;
+  }
+  
+  button:hover {
+    opacity:1;
+  }
+  
+  /* Extra styles for the cancel button */
+  .cancelbtn {
+    margin-left:140px;
+    background-color: #D6D6D6;
+  }
+  
+  /* Float cancel and signup buttons and add an equal width */
+  .cancelbtn, .signupbtn {
+    float: left;
+    width: 20%;
+    border-radius: 30px;
+    padding: 10px 15px;
+  }
+  
+  /* Add padding to container elements */
+  .signup-container {
+    padding: 16px;
+    position: relative;
+    top:1px;
+  }
+  
+  /* The Modal (background) */
+  /* Style the horizontal ruler */
+   
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 35px;
+    top: 15px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #f1f1f1;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  /* Clear floats */
+  .clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  /* Change styles for cancel button and signup button on extra small screens */
+  @media screen and (max-width: 100px) {
+    .cancelbtn, .signupbtn {
+       width: 50%;
+    }
+  }
+    
+  
+  
+  

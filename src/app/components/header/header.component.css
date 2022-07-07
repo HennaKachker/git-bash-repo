@@ -1,0 +1,163 @@
+
+*{
+    box-sizing: border-box;
+  }
+  
+  
+  .header {
+    /* border: 1px solid red;
+    padding: 15px; */
+  
+    background-color:Black;
+     height: 15%;
+  }
+  .headerM {
+    /* border: 1px solid red;
+    padding: 15px; */  
+    background-color:rgb(234, 234, 234);
+     height: 9%;
+     left:20px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+    grid-auto-flow: column;
+  }
+  .questionmark:after {
+    position:absolute;
+    content: '?';
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.8em;
+    line-height: 0.8em;
+    border-radius: 50%;
+    margin-left: 6px;
+    padding: 0.13em 0.2em 0.09em 0.2em;
+    color: inherit;
+    border: 1px solid;
+    text-decoration: none;
+    right:60px;
+    Top: 15px;
+}
+.about {
+     position: relative;
+     color: rgba(248, 247, 247, 0.904);
+     right: 100px;
+     Top: 25px;
+     font: bold 20px/20px Helvetica;
+}
+
+  [class*="col-"] {
+    float: left;
+    padding: 15px;
+  }
+  
+  .col-1 {width: 8.33%;}
+  .col-2 {width: 16.66%;}
+  .col-3 {width: 25%;}
+  .col-4 {width: 33.33%;}
+  .col-5 {width: 41.66%;}
+  .col-6 {width: 50%;}
+  .col-7 {width: 58.33%;}
+  .col-8 {width: 66.66%;}
+  .col-9 {width: 75%;}
+  .col-10 {width: 83.33%;}
+  .col-11 {width: 91.66%;}
+  .col-12 {width: 100%;}
+  
+  ul {
+    list-style-type: none;
+    margin-left: 0;
+    margin-right: 0;
+  margin-top: -15px;
+    padding:0;
+    overflow: hidden;
+    background-color: rgb(234, 234, 234);
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: orangered;
+    text-align: center;
+    padding: 14px 16px;
+    padding-top: 2px;
+    text-decoration: none;
+    font-weight: 200;
+    
+  }
+  
+  li a:hover:not(.active) {
+    background-color: wheat;
+  }
+  
+  .active {
+      border-bottom: 2px solid orangered;
+   
+  }
+  
+  .menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    border: 2px solid black;
+  }
+  
+  .menu li {
+    padding: 8px;
+    background-color: rgb(250, 249, 248);
+    color: #1d1b1b;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.12), 0px 1px 2px rgba(0,0,0,0.24); 
+    width:160px;
+    border: 2px solid black;
+    font-size: bold;
+    height: 43px;
+  }
+  
+  .menu li:hover {
+    background-color: #0099cc;
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    border-radius: 0px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  img {
+    border-radius: 5px 5px 0 0;
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+
+  .modal-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 1.875rem;
+    color: #000;
+    pointer-events: auto;
+    background-color: #fff;
+    background-clip: padding-box;
+    outline: 0;
+}
+
+
+  

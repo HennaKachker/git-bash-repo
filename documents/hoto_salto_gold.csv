@@ -1,0 +1,879 @@
+id,EQPT_NAME,GOLD_ORDER_NUMBER,IC01_ID,cust_name,CUSTOMER_NAME,BAN_ID,ORANGE_SITE_REFERENCE,CORE_SITE_ID,ADDRESS_ID,CUSTOMER_SITE_REFERENCE,ORDER_STATUS,CONTRACTING_PARTY,CONTRACT_NUMBER,PRIMARY_CONTACT_NUMBER,END_USER,ORDER_TERM,QUOTATION_REFERENCE_NUMBER,CPE_NAME,VPN_SERVICE_BANDWIDTH,ACCESS_SPEED,ACCESS_TYPE,QUOTED_PoP_ID,DOCUMENT_EXIST,NOTE_EXIST,MILESTONE_VALUE,TRANSACTION_STATUS,TRANSACTION_REMARKS
+1,KBJS1008,10-1329240,30075,Philip Morris International,Philip Morris International,GWPI05,CN-BJS-EXB,MSG4101610,MAG4101578,CN-BJS-EXB,Billing,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Billing
+2,KNEW30002,10-1319163,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_USA_Metairie_001,APS0001500,APA0001500,386,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+3,KSSN30034,10-1326383,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_KOR_Seongnam-si_002,BLS0051040,BLA0051040,3995,Release,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Release
+4,KQBH30070,10-1338770,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_FRA_Saint-Denis_002,BLS0050544,BLA0050544,3025,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+5,KSSN30029,10-1326383,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_KOR_Seongnam-si_002,BLS0051040,BLA0051040,3995,Release,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Release
+6,KQYA30001,10-1338810,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_KOR_Anyang_001,BLS0050698,BLA0050698,4573,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+7,KSSN30033,10-1326383,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_KOR_Seongnam-si_002,BLS0051040,BLA0051040,3995,Release,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Release
+8,KOSN30014,10-1338817,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_KOR_Pyeongtaek_001,BLS0050836,BLA0050836,6610,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+9,KSSN30032,10-1326383,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_KOR_Seongnam-si_002,BLS0051040,BLA0051040,3995,Release,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Release
+10,KSSN30030,10-1326383,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_KOR_Seongnam-si_002,BLS0051040,BLA0051040,3995,Release,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Release
+11,KPFL30062,10-1338840,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_CZE_Prague_001,APS0001662,APA0001662,1470,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+12,KPFL30063,10-1338840,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_CZE_Prague_001,APS0001662,APA0001662,1470,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+13,KLPI30002,10-1338893,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_SWE_Vasastaden_001,APS0002119,APA0002119,2265,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+14,KPFL30061,10-1338840,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_CZE_Prague_001,APS0001662,APA0001662,1470,Acceptance,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Acceptance
+15,PDLC30002,10-1215398,686849,Mars Information Services Inc,Mars Information Services Inc,NSMARS01,686849_CHN_Dalian_002,BLS0046989,BLA0046989,WDL,Closed,"Mars Information Services Inc (686849)
+   800 High Street
+   HACKETTSTOWN
+   NJ
+   US
+   NJ 07840",85037226,"Backer, Eloise 
+   +1973 691 3519 
+   eloise.backer@effem.com","Mars Information Services Inc (686849)
+800 High Street
+HACKETTSTOWN
+NJ
+US
+NJ 07840",63,462564,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+16,AFRA30596,10-1281081,670409,DSM Business Services BV,DSM Business Services BV,GDSMNIP1,0246_Frankfurt,MS10003050,MA10003107,0246_FrankfurtamMain,Closed,"DSM Business Services BV (670409)
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",85007444,"Martin, Manuel 
+   +41 79 478 50 70 
+   Manuel.Martin@dsm.com","DSM Business Services BV (670409)
+
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",60,501312,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+17,KBZM1190,10-1306249,30075,Philip Morris International,Philip Morris International,CHPO01,NL-BZM-PMI,MS09000783,MA09000828,NL-BZM-PMI,Billing,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Billing
+18,KPGV30084,10-1299199,670409,DSM Group Business Services,DSM Group Business Services,GDSMNIP1,0400_Greenville,CI00000184,CI00000184,0400_Greenville,Billing,null,null,null,null,null,null,null,null,null,null,null,null,null,null,FAILED,Order Status is Billing
+19,KQEV30029,10-1326538,689068,Otis Elevator Company,Otis Elevator Company,NSOTISE04,689068_FRA_Gennevilliers_001,BLS0050885,BLA0050885,7450,Closed,"Otis Elevator Company (689068)
+   One Carrier Place
+   FARMINGTON
+   CT
+   US
+   06084",85038335,"Sethi, Nishant 
+   1-860-728-7000 
+   nishant.sethi@otis.com","Otis Elevator Company (689068)
+One Carrier Place
+FARMINGTON
+CT
+US
+06084",56,na,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+20,PZQA031,10-1248319,684628,Takeda Pharmaceuticals Int AG,Takeda Pharmaceuticals Int AG,NSTAKE03,684628_DEU_Singen (Hohentwiel)_001,BLS0028725,BLA0028725,DESIN001,Closed,"Takeda Pharmaceuticals Int AG (684628)
+   Thurgauerstrasse 130
+   GLATTPARK-OPFIKON
+    
+   CH
+   8152",85036665,"Hussain, Syed 
+   000 
+   Syed.Hussain@takeda.com","Takeda Pharmaceuticals Int AG (684628)
+
+   Thurgauerstrasse 130
+   GLATTPARK-OPFIKON
+    
+   CH
+   8152",32,460897,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+21,ASHA32929,10-1351572,686849,Mars Information Services Inc,Mars Information Services Inc,NSMARS01,686849_CHN_Huangpu Qu_004,BLS0046971,BLA0046971,SHG,Closed,"Mars Information Services Inc (686849)
+   800 High Street
+   HACKETTSTOWN
+   NJ
+   US
+   NJ 07840",85037226,"Backer, Eloise 
+   +1973 691 3519 
+   eloise.backer@effem.com","Mars Information Services Inc (686849)
+
+   800 High Street
+   HACKETTSTOWN
+   NJ
+   US
+   NJ 07840",72,539822,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+22,KPIU30036,10-1303131,670409,DSM Group Business Services,DSM Group Business Services,GDSMNIP1,0753_Piura,CI00018796,CI00018879,0753_Piura,Closed,"DSM Group Business Services (670409)
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",85031750,"Martin, Manuel 
+   +41 79 478 50 70 
+   Manuel.Martin@dsm.com","DSM Group Business Services (670409)
+
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",58,512929,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+23,ADXB060,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+24,ADXB008,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+25,KDXB1009,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+26,ADXB081,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+27,ADXB063,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+28,KDXB1097,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+29,ADXB006,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+30,PLDZ30006,10-1228565,2346,3M UK PLC,3M UK PLC,CTHM111,2346_ZAF_Centurion_001,CI00179229,CI00180114,ZA-Imvula-ServiceCenterKCI,Closed,"3M UK PLC (2346)
+   3M Centre, Cain Road
+   BRACKNELL
+   
+   GB
+   RG12 8HT",85012140,"Griffin, Oli 
+   +441344 858280 
+   ogriffin@mmm.com","3M UK PLC (2346)
+3M Centre, Cain Road
+BRACKNELL
+
+GB
+RG12 8HT",18,468134,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+31,ADXB003,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+32,ADXB083,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+33,ADXB007,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+34,KDXB1030,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+35,KDXB1025,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+36,PRUH30082,10-1357647,672782,Schenker AG,Schenker AG,CSHG01,672782_SAU_Riyadh_005,CI00199131,CI00200017,SA0108,Closed,"Schenker AG (672782)
+   Kruppstr. 4
+   ESSEN
+   
+   DE
+   45128",85034561,"Köksen, Mete 
+   +49 201 8781 2296 
+   mete.koeksen@dbschenker.com","Schenker AG (672782)
+Kruppstr. 4
+ESSEN
+
+DE
+45128",7,545467,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+37,ADXB009,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+38,ADXB001,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+39,KDXB1007,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+40,ADXB064,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+41,KDXB1001,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+42,ADXB010,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+43,ADXB082,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+44,PLUE30004,10-1343061,684143,Inditex SA,Inditex SA,NSFES80,684143_SVK_Bratislava_009,CI00193990,CI00194876,14694,Closed,"Orange Espagne SAU (680610)
+   Paseo del Club Deportivo 1,
+   edf 7, 2 pt
+   MADRID
+   
+   ES
+   28223",85038703,"Giralda, Victoria Rojo 
+   +34911784244 
+   victoria.rojo@orange.com","Inditex SA (684143)
+Avda.Diputación sn
+Sabon
+ARTEIXO
+
+ES
+15179",36,527996,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+45,AZLB30031,10-1309643,670409,DSM Group Business Services,DSM Group Business Services,GDSMNIP1,0668_Lalden,MS10003022,MA10003079,0668_Lalden,Closed,"DSM Group Business Services (670409)
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",85031750,"Martin, Manuel 
+   +41 79 478 50 70 
+   Manuel.Martin@dsm.com","DSM Group Business Services (670409)
+
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",57,516874,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+46,AZLB30027,10-1309643,670409,DSM Group Business Services,DSM Group Business Services,GDSMNIP1,0668_Lalden,MS10003022,MA10003079,0668_Lalden,Closed,"DSM Group Business Services (670409)
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",85031750,"Martin, Manuel 
+   +41 79 478 50 70 
+   Manuel.Martin@dsm.com","DSM Group Business Services (670409)
+
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",57,516874,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+47,KDXB1011,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+48,ADXB079,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+49,ADXB004,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+50,ADXB014,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+51,KDXB1003,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+52,KDXB1024,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+53,KDXB30075,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+54,KDXB30076,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+55,ADXB011,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+56,AZLB30026,10-1309643,670409,DSM Group Business Services,DSM Group Business Services,GDSMNIP1,0668_Lalden,MS10003022,MA10003079,0668_Lalden,Closed,"DSM Group Business Services (670409)
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",85031750,"Martin, Manuel 
+   +41 79 478 50 70 
+   Manuel.Martin@dsm.com","DSM Group Business Services (670409)
+
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",57,516874,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+57,KZLB30029,10-1309643,670409,DSM Group Business Services,DSM Group Business Services,GDSMNIP1,0668_Lalden,MS10003022,MA10003079,0668_Lalden,Closed,"DSM Group Business Services (670409)
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",85031750,"Martin, Manuel 
+   +41 79 478 50 70 
+   Manuel.Martin@dsm.com","DSM Group Business Services (670409)
+
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",57,516874,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+58,AZLB30025,10-1309643,670409,DSM Group Business Services,DSM Group Business Services,GDSMNIP1,0668_Lalden,MS10003022,MA10003079,0668_Lalden,Closed,"DSM Group Business Services (670409)
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",85031750,"Martin, Manuel 
+   +41 79 478 50 70 
+   Manuel.Martin@dsm.com","DSM Group Business Services (670409)
+
+   Het Overloon 1
+   HEERLEN
+    
+   NL
+   6411 TE",57,516874,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+59,KDXB1096,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+60,ADXB080,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+61,KDXB1002,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+62,ADXB078,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+63,ADXB012,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+64,KDXB1077,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+65,ADXB002,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+66,ADXB062,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+67,ADXB084,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+68,ADXB005,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+69,PPNQ30056,10-1152040,9396,Givaudan International SA,Givaudan International SA,CGIV189MH,9396_IND_Pune_001,CI00166677,CI00167561,9T,Closed,"Givaudan International SA (9396)
+   5, chemin de la Parfumerie
+   VERNIER
+   
+   CH
+   1214",85037149,"Comard, Benedicte 
+   41227809398 
+   benedicte.comard@givaudan.com","Givaudan International SA (9396)
+5, chemin de la Parfumerie
+VERNIER
+
+CH
+1214",75,418072,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+70,KDXB1010,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+71,KDXB1008,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,
+72,ADXB059,10-1261477,30075,Philip Morris International,Philip Morris International,CHPO01,AE-DXB-IFC,MS09000481,MA09000500,AE-DXB-IFC,Closed,"Philip Morris International (30075)
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",85034834,"Wait, Dave C 
+   +41 21 618 75 95 
+   david.wait@eu.altria.com","Philip Morris International (30075)
+
+   Av des Baumettes 17
+   Case Postale
+   RENENS
+    
+   CH
+   1020",36,489556,null,null,null,null,null,Documents Exist,Note Exist,Milestone Exist (Auto Submitted),PROCESSED,

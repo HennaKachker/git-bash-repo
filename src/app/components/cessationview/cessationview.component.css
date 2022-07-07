@@ -1,0 +1,43 @@
+.table-hover tbody tr:hover {
+    color: #000;
+    background-color: #FF7900 ;
+  }
+  
+  .table tr {
+    border-bottom: .0625rem solid #ccc;
+  }
+  
+  .table thead tr {
+    border-bottom-width: .205rem;
+  }
+  .table tr {
+    vertical-align:center;
+  
+    border-bottom: .0625rem solid #ccc;
+    border-bottom-width: 0.0625rem;
+  
+  }
+  .table-dataTable {
+    clear: both;
+    margin-top: 6px !important;
+    margin-bottom: 6px !important;
+    max-width: none !important;
+    border-collapse: separate !important;
+    border-spacing: 0;
+  
+  }
+  .table-responsive{
+    display: block;
+    overflow-x: auto;
+  }
+  thead{
+    white-space: nowrap;
+    background-color: #000000;color:white   ; 
+  }
+  td{
+    white-space: nowrap;
+  
+    text-align: center;
+  }
+  
+  
